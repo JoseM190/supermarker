@@ -2,15 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ClienteController; //cliente
-use App\Http\Controllers\CargoController; // cargo
-use App\Http\Controllers\UsuarioController; // usuario
-use App\Http\Controllers\CategoriaController; // categoria
-use App\Http\Controllers\ProveedorController; // proveedor
-use App\Http\Controllers\ProductoController; // producto
-use App\Http\Controllers\CompraController; // compra
-use App\Http\Controllers\VentaController; // venta
-use App\Http\Controllers\FacturaController; // factura
+use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\CargoController;
+use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ProveedorController;
+use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\CompraController;
+use App\Http\Controllers\VentaController;
+use App\Http\Controllers\FacturaController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
