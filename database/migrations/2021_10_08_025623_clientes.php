@@ -15,10 +15,10 @@ class Clientes extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->id('idcliente');
-            $table->string('cedula');
+            $table->string('cedula',12);
             $table->string('nombre');
             $table->string('apellido');
-            $table->integer('celular');
+            $table->integer('celular',8);
             $table->timestamps();
         });
     }

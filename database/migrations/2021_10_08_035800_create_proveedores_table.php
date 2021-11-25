@@ -20,8 +20,8 @@ class CreateProveedoresTable extends Migration
             $table->string('ciudad');
             $table->string('correo')->nullable();
             $table->string('empresa');
-            $table->integer('celular');
-            $table->string('estado');
+            $table->integer('celular',8);
+            $table->string('estado',1);
             $table->timestamps();
         });
     }

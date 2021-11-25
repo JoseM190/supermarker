@@ -69,3 +69,7 @@ Route::get('ventas/{venta}', [VentaController::class, 'show']);
 Route::get('facturas', [FacturaController::class, 'index']);
 Route::get('facturas/create', [FacturaController::class, 'create']);
 Route::get('facturas/{factura}', [FacturaController::class, 'show']);
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');

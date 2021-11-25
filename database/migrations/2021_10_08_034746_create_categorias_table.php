@@ -17,7 +17,7 @@ class CreateCategoriasTable extends Migration
             $table->id('idcategoria');
             $table->string('nombre');
             $table->string('pasillo');
-            $table->string('estado');
+            $table->string('estado',1);
             $table->timestamps();
         });
     }
