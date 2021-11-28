@@ -18,12 +18,12 @@ class CreateUsuariosTable extends Migration
             $table->unsignedBigInteger('idcargo');
             $table->string('nombre');
             $table->string('apellido');
-            $table->string('cedula',12);
-            $table->integer('celular',8);
+            $table->string('cedula');
+            $table->integer('celular');
             $table->string('direccion');
             $table->string('correo')->nullable();
             $table->string('contraseña');
-            $table->string('estado',1);
+            $table->string('estado');
             $table->foreign('idcargo')->references('idcargo')->on('cargos');
             $table->timestamps();
         });

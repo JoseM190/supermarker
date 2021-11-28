@@ -25,6 +25,10 @@ use App\Http\Controllers\FacturaController;
 
 Route::get('/', HomeController::class);
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
 //cliente
 Route::get('clientes', [ClienteController::class, 'index']);
 Route::get('clientes/create', [ClienteController::class, 'create']);
@@ -70,6 +74,6 @@ Route::get('facturas', [FacturaController::class, 'index']);
 Route::get('facturas/create', [FacturaController::class, 'create']);
 Route::get('facturas/{factura}', [FacturaController::class, 'show']);
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+
+
+

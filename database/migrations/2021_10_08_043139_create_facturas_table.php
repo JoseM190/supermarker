@@ -16,13 +16,13 @@ class CreateFacturasTable extends Migration
         Schema::create('facturas', function (Blueprint $table) {
             $table->id('idfactura');
             $table->unsignedBigInteger('idusuario');
-            $table->unsignedBigInteger('idcliente');
+            $table->unsignedBigInteger('idclientes');
             $table->unsignedBigInteger('idventa');
             $table->date('fecha');
             $table->string('descripcion');
             $table->double('total');
             $table->foreign('idusuario')->references('idusuario')->on('usuarios');
-            $table->foreign('idcliente')->references('idcliente')->on('clientes');
+            $table->foreign('idclientes')->references('idclientes')->on('clientes');
             $table->foreign('idventa')->references('idventa')->on('ventas');
             $table->timestamps();
         });

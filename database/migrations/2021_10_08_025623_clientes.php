@@ -14,11 +14,11 @@ class Clientes extends Migration
     public function up()
     {
         Schema::create('clientes', function (Blueprint $table) {
-            $table->id('idcliente');
-            $table->string('cedula',12);
+            $table->id('idclientes');
+            $table->string('cedula');
             $table->string('nombre');
             $table->string('apellido');
-            $table->integer('celular',8);
+            $table->integer('celular');
             $table->timestamps();
         });
     }
