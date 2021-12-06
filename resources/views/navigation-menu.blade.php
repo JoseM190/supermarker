@@ -15,11 +15,32 @@
                     <x-jet-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
-                </div>
-
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{ route('clientes.create') }}" :active="request()->routeIs('clientes.create')">
-                        {{ __('Clientes') }}
+                    <x-jet-nav-link href="{{ route('clientes.index') }}" :active="request()->routeIs('clientes.*')">
+                        Clientes
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('cargos.index') }}" :active="request()->routeIs('cargos.*')">
+                        Cargos
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('usuarios.index') }}" :active="request()->routeIs('usuarios.*')">
+                        Usuarios
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('categorias.index') }}" :active="request()->routeIs('categorias.*')">
+                        Categorias
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('proveedores.index') }}" :active="request()->routeIs('proveedores.*')">
+                        Proveedores
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('productos.index') }}" :active="request()->routeIs('productos.*')">
+                        Productos
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('compras.index') }}" :active="request()->routeIs('compras.*')">
+                        Compras
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('ventas.index') }}" :active="request()->routeIs('ventas.*')">
+                        Ventas
+                    </x-jet-nav-link>
+                    <x-jet-nav-link href="{{ route('facturas.index') }}" :active="request()->routeIs('facturas.*')">
+                        Facturas
                     </x-jet-nav-link>
                 </div>
             </div>

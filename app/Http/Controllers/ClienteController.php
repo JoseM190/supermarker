@@ -8,9 +8,10 @@ use Illuminate\Http\Request;
 class ClienteController extends Controller
 {
     public function index(){
-         $clientes = Cliente::orderBy('id', 'desc')->paginate();
+        $cliente = Cliente::all();
+        $cliente = Cliente::orderBy('id', 'desc')->paginate();
 
-        return view('clientes.index', compact('clientes'));
+        return view('clientes.index', compact('cliente'));
     }
 
     public function create(){
@@ -20,7 +21,6 @@ class ClienteController extends Controller
     public function store(Request $request){
 
         $request->validate([
-            'idcliente' => 'required',
             'cedula' => 'required',
             'nombre' => 'required',
             'apellido' => 'required',
@@ -29,14 +29,14 @@ class ClienteController extends Controller
 
         $cliente = new Cliente();
 
-        $cliente->idcliente = $request->idcliente;
         $cliente->cedula = $request->cedula;
         $cliente->nombre = $request->nombre;
         $cliente->apellido = $request->apellido;
         $cliente->celular = $request->celular;
 
         $cliente->save();
-        return redirect()->route('clientes.show', $cliente);
+        return view('clientes.index', compact('clientes'));
+        //return redirect()->route('clientes.show', $cliente);
     }
 
     public function show(Cliente $cliente){
@@ -51,21 +51,31 @@ class ClienteController extends Controller
 
     public function update(Request $request, Cliente $cliente){
 
-        $request->validate([
-            'idcliente' => 'required',
+        $fields = $request->validate([
             'cedula' => 'required',
             'nombre' => 'required',
             'apellido' => 'required',
             'celular' => 'required'
         ]);
 
-        $cliente->idcliente = $request->idcliente;
         $cliente->cedula = $request->cedula;
         $cliente->nombre = $request->nombre;
         $cliente->apellido = $request->apellido;
         $cliente->celular = $request->celular;
 
-        $cliente->save();
-        return redirect()->route('clientes.show', $cliente);
+        $cliente->update($fields);
+        $cliente = Cliente::all();
+
+        return view('clientes.index', compact('cliente'));
+        //$cliente->save();
+        //return redirect()->route('clientes.show', $cliente);
+    }
+
+    public function destroy(Cliente $cliente){
+        $cliente->delete();
+
+        $cliente = Cliente::all();
+
+        return redirect()->route('clientes.index', compact('cliente'))->with('status', 'Cliente eliminado');
     }
 }
