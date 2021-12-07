@@ -20,6 +20,7 @@
                             <table class="w-full">
                                 <thead>
                                     <tr class="text-md font-semibold tracking-wide text-left text-gray-900 bg-gray-100 uppercase border-b border-gray-600">
+                                        <th class="px-4 py-3">Id</th>
                                         <th class="px-4 py-3">Cedula</th>
                                         <th class="px-4 py-3">Nombre</th>
                                         <th class="px-4 py-3">Apellido</th>
@@ -30,6 +31,8 @@
                                 <tbody class="bg-white">
                                     @foreach ($cliente as $cliente)
                                     <tr class="text-gray-700">
+                                        <td class="px-4 py-3 text-ms font-semibold border">{{$cliente->id}}</td>
+
                                         <td class="px-4 py-3 border">
                                             <div class="flex items-center text-sm">
                                                 <div class="relative w-8 h-8 mr-3 rounded-full md:block">
@@ -52,9 +55,19 @@
                                         </td>
 
                                         <td class="px-4 py-3 text-ms font-semibold border">
+                                            <div class="flex items-center text-sm">
+                                                <div class="relative w-8 h-8 mr-3 rounded-full md:block">
+                                                    <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
+                                                </div>
+                                                <div>
+                                                    <a class="p-2 pl-5 pr-5 bg-yellow-400 text-gray-100 text-lg rounded-lg focus:border-4 border-yellow-300"
+                                                    href="{{route('cliente.show', $cliente->id)}}">Editar</a>
+                                                </div>
+                                            </div>
+
                                             <form action="{{ route('cliente.destroy', $cliente) }}" method="POST">
                                                 @csrf @method('DELETE')
-                                                <button class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">Eliminar</button>
+                                                <button class="p-2 pl-5 pr-5 bg-red-600 text-gray-100 text-lg rounded-lg focus:border-4 border-red-300">Eliminar</button>
                                             </form>
                                         </td>
                                     </tr>

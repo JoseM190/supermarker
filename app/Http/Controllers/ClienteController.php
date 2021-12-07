@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Models\Cliente;
 use Illuminate\Http\Request;
+use Livewire\WithPagination;
 
 class ClienteController extends Controller
 {
+    use WithPagination;
     public function index(){
         $cliente = Cliente::all();
-        $cliente = Cliente::orderBy('id', 'desc')->paginate(3);
+        $cliente = Cliente::orderBy('id', 'desc')->paginate();
 
         return view('cliente.index', compact('cliente'));
     }
@@ -20,7 +22,7 @@ class ClienteController extends Controller
 
     public function store(Request $request){
 
-        $request->validate([
+        $fields = $request->validate([
             'cedula' => 'required',
             'nombre' => 'required',
             'apellido' => 'required',
@@ -34,7 +36,7 @@ class ClienteController extends Controller
         $cliente->apellido = $request->apellido;
         $cliente->celular = $request->celular;
 
-        $cliente->save();
+        $cliente->save($fields);
         return view('cliente.index', compact('cliente'));
         //return redirect()->route('cliente.show', $cliente);
     }
