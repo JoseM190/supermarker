@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 
-                <a href="{{ route('clientes.create') }}"
+                <a href="{{ route('cliente.create') }}"
                 class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">
                 Registrar Cliente</a>
 
@@ -28,7 +28,7 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white">
-                                    @foreach ($clientes as $cliente)
+                                    @foreach ($cliente as $cliente)
                                     <tr class="text-gray-700">
                                         <td class="px-4 py-3 border">
                                             <div class="flex items-center text-sm">
@@ -36,7 +36,7 @@
                                                     <div class="absolute inset-0 rounded-full shadow-inner" aria-hidden="true"></div>
                                                 </div>
                                                 <div>
-                                                    <a href="{{route('clientes.show', $cliente->id)}}">
+                                                    <a href="{{route('cliente.show', $cliente->id)}}">
                                                         <p class="font-semibold text-black"> {{$cliente->cedula}} </p>
                                                     </a>
                                                 </div>
@@ -52,7 +52,7 @@
                                         </td>
 
                                         <td class="px-4 py-3 text-ms font-semibold border">
-                                            <form action="{{ route('clientes.destroy', $cliente) }}" method="POST">
+                                            <form action="{{ route('cliente.destroy', $cliente) }}" method="POST">
                                                 @csrf @method('DELETE')
                                                 <button class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">Eliminar</button>
                                             </form>

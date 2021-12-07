@@ -41,9 +41,9 @@
                 </div>
 
             </div>
-            <a href="{{ route('clientes.index') }}"
+            <a href="{{ route('cliente.index') }}"
                 class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">Volver</a>
-            <a href="{{ route('clientes.edit', $cliente) }}"
+            <a href="{{ route('cliente.edit', $cliente) }}"
                 class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">Editar</a>
         </div>
 </x-app-layout>

@@ -13,7 +13,7 @@ class TiendaController extends Controller
 
     public function __invoke()
     {
-        return redirect()->route('tiend as.index');
+        return redirect()->route('tiendas._index');
     }
 
     /**

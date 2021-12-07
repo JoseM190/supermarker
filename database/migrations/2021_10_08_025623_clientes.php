@@ -14,7 +14,7 @@ class Clientes extends Migration
     public function up()
     {
         Schema::create('clientes', function (Blueprint $table) {
-            $table->id('idclientes');
+            $table->id('id');
             $table->string('cedula');
             $table->string('nombre');
             $table->string('apellido');

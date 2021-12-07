@@ -11,7 +11,7 @@
 
                 <div class="max-w-lg mx-auto">
 
-                    <form action="{{route('clientes.update', $cliente)}}" method="POST">
+                    <form action="{{route('cliente.update', $cliente)}}" method="POST">
                         @csrf @method('PUT')
                         <div class="mb-6">
                             <label for="cedula" class="text-sm font-medium text-gray-900 block mb-2">Cedula: </label>
@@ -37,7 +37,7 @@
                     </form>
 
                 </div>
-                
+
             </div>
         </div>
     </div>

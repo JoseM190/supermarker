@@ -9,13 +9,13 @@ class ClienteController extends Controller
 {
     public function index(){
         $cliente = Cliente::all();
-        $cliente = Cliente::orderBy('id', 'desc')->paginate();
+        $cliente = Cliente::orderBy('id', 'desc')->paginate(3);
 
-        return view('clientes.index', compact('cliente'));
+        return view('cliente.index', compact('cliente'));
     }
 
     public function create(){
-        return view('clientes.create',);
+        return view('cliente.create',);
     }
 
     public function store(Request $request){
@@ -35,18 +35,18 @@ class ClienteController extends Controller
         $cliente->celular = $request->celular;
 
         $cliente->save();
-        return view('clientes.index', compact('clientes'));
-        //return redirect()->route('clientes.show', $cliente);
+        return view('cliente.index', compact('cliente'));
+        //return redirect()->route('cliente.show', $cliente);
     }
 
     public function show(Cliente $cliente){
 
-        return view('clientes.show', compact('cliente'));
+        return view('cliente.show', compact('cliente'));
     }
 
     public function edit(Cliente $cliente){
 
-        return view('clientes.edit', compact('cliente'));
+        return view('cliente.edit', compact('cliente'));
     }
 
     public function update(Request $request, Cliente $cliente){
@@ -66,9 +66,9 @@ class ClienteController extends Controller
         $cliente->update($fields);
         $cliente = Cliente::all();
 
-        return view('clientes.index', compact('cliente'));
+        return view('cliente.index', compact('cliente'));
         //$cliente->save();
-        //return redirect()->route('clientes.show', $cliente);
+        //return redirect()->route('cliente.show', $cliente);
     }
 
     public function destroy(Cliente $cliente){
@@ -76,6 +76,6 @@ class ClienteController extends Controller
 
         $cliente = Cliente::all();
 
-        return redirect()->route('clientes.index', compact('cliente'))->with('status', 'Cliente eliminado');
+        return redirect()->route('cliente.index', compact('cliente'))->with('status', 'Cliente eliminado');
     }
 }
