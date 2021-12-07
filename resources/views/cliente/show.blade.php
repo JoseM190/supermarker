@@ -16,21 +16,21 @@
                         <div class="text-sm mt-2">
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                {{$cliente->cedula}}
+                                Cedula: {{$cliente->cedula}}
                             </div>
                             <div class="text-sm mt-2">
                                 <div
                                     class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                    {{$cliente->nombre}}
+                                    Nombre: {{$cliente->nombre}}
                                 </div>
                                 <div
                                     class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                    {{$cliente->apellido}}
+                                    Apellido: {{$cliente->apellido}}
                                 </div>
                                 <div class="text-sm mt-2">
                                     <div
                                         class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                        {{$cliente->celular}}
+                                        Celular: {{$cliente->celular}}
                                     </div>
                                 </div>
                             </div>
@@ -42,8 +42,12 @@
 
             </div>
             <a href="{{ route('cliente.index') }}"
-                class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">Volver</a>
+                class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">
+                Volver
+            </a>
             <a href="{{ route('cliente.edit', $cliente) }}"
-                class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">Editar</a>
+                class="p-2 pl-5 pr-5 bg-yellow-400 text-gray-100 text-lg rounded-lg focus:border-4 border-yellow-300">
+                Editar
+            </a>
         </div>
 </x-app-layout>

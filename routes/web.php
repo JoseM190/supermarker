@@ -30,10 +30,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', TiendaController::class)->name('dashboard');
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function(){
+    return view('dashboard');
+})->name('dashboard');
 
-Route::resource('tiendas', TiendaController::class);
-Route::get('tiendas/{producto}', [TiendaController::class, 'crearPedido'])->name('tiendas.crearPedido');
+//Route::resource('tiendas', TiendaController::class);
+//Route::get('tiendas/{producto}', [TiendaController::class, 'crearPedido'])->name('tiendas.crearPedido');
 
 Route::resource('cliente', ClienteController::class);
 Route::resource('cargo', CargoController::class);

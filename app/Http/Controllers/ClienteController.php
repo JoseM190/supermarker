@@ -4,14 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Cliente;
 use Illuminate\Http\Request;
-use Livewire\WithPagination;
 
 class ClienteController extends Controller
 {
-    use WithPagination;
     public function index(){
         $cliente = Cliente::all();
-        $cliente = Cliente::orderBy('id', 'desc')->paginate();
+        //$cliente = Cliente::orderBy('id', 'desc')->paginate();
 
         return view('cliente.index', compact('cliente'));
     }
@@ -22,23 +20,23 @@ class ClienteController extends Controller
 
     public function store(Request $request){
 
-        $fields = $request->validate([
+        $request->validate([
             'cedula' => 'required',
             'nombre' => 'required',
             'apellido' => 'required',
             'celular' => 'required'
         ]);
 
-        $cliente = new Cliente();
+        $cliente = new Cliente;
 
-        $cliente->cedula = $request->cedula;
-        $cliente->nombre = $request->nombre;
-        $cliente->apellido = $request->apellido;
-        $cliente->celular = $request->celular;
+        $cliente->cedula = $request->input('cedula');
+        $cliente->nombre = $request->input('nombre');
+        $cliente->apellido = $request->input('apellido');
+        $cliente->celular = $request->input('celular');
 
-        $cliente->save($fields);
-        return view('cliente.index', compact('cliente'));
-        //return redirect()->route('cliente.show', $cliente);
+        $cliente->save();
+        //return view('cliente.index', compact('cliente'));
+        return redirect()->route('cliente.show', $cliente);
     }
 
     public function show(Cliente $cliente){
@@ -53,31 +51,30 @@ class ClienteController extends Controller
 
     public function update(Request $request, Cliente $cliente){
 
-        $fields = $request->validate([
+        $request->validate([
             'cedula' => 'required',
             'nombre' => 'required',
             'apellido' => 'required',
             'celular' => 'required'
         ]);
 
-        $cliente->cedula = $request->cedula;
-        $cliente->nombre = $request->nombre;
-        $cliente->apellido = $request->apellido;
-        $cliente->celular = $request->celular;
+        $cliente->cedula = $request->input('cedula');
+        $cliente->nombre = $request->input('nombre');
+        $cliente->apellido = $request->input('apellido');
+        $cliente->celular = $request->input('celular');
 
-        $cliente->update($fields);
+        //$cliente->update();
+        $cliente->save();
         $cliente = Cliente::all();
 
         return view('cliente.index', compact('cliente'));
-        //$cliente->save();
         //return redirect()->route('cliente.show', $cliente);
     }
 
     public function destroy(Cliente $cliente){
         $cliente->delete();
-
-        $cliente = Cliente::all();
-
-        return redirect()->route('cliente.index', compact('cliente'))->with('status', 'Cliente eliminado');
+        //$cliente = Cliente::all();
+        //return redirect()->route('cliente.index', compact('cliente'))->with('status', 'Cliente eliminado');
+        return redirect()->route('cliente.index')->with('status', 'Cliente eliminado');
     }
 }
