@@ -44,13 +44,15 @@
                                             <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> {{$cliente->celular}} </span>
                                         </td>
 
-                                        <td class="px-4 py-3 text-ms font-semibold border">
+                                        <td class="px-4 py-3 text-ms font-semibold border" style="text-align: center;">
                                             <div>
                                                 <a class="p-2 pl-5 pr-5 bg-yellow-400 text-gray-100 text-lg rounded-lg focus:border-4 border-yellow-300"
                                                 href="{{route('cliente.show', $cliente->id)}}">
                                                     Editar
                                                 </a>
                                             </div>
+
+                                            <br>
 
                                             <form action="{{ route('cliente.destroy', $cliente) }}" method="POST">
                                                 @csrf @method('DELETE')

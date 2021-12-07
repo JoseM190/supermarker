@@ -14,7 +14,7 @@ class CreateUsuariosTable extends Migration
     public function up()
     {
         Schema::create('usuarios', function (Blueprint $table) {
-            $table->id('idusuario');
+            $table->id('id');
             $table->unsignedBigInteger('idcargo');
             $table->string('nombre');
             $table->string('apellido');
@@ -24,7 +24,7 @@ class CreateUsuariosTable extends Migration
             $table->string('correo')->nullable();
             $table->string('contraseña');
             $table->string('estado');
-            $table->foreign('idcargo')->references('idcargo')->on('cargos');
+            $table->foreign('idcargo')->references('id')->on('cargos');
             $table->timestamps();
         });
     }
