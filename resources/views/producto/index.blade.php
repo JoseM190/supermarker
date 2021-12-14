@@ -9,7 +9,7 @@
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
                 <a href="{{ route('producto.create') }}"
                     class="p-2 pl-5 pr-5 bg-indigo-500 text-gray-100 text-lg rounded-lg focus:border-4 border-indigo-300">
-                    Registrar producto
+                    Registrar productos
                 </a>
                 <section class="container mx-auto p-6 font-mono">
                     <div class="w-full mb-8 overflow-hidden rounded-lg shadow-lg">
@@ -29,7 +29,7 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white">
-                                    @foreach ($productos as $producto)
+                                    @foreach ($producto as $producto)
                                     <tr class="text-gray-700">
                                         <td class="px-4 py-3 text-ms font-semibold border">{{$producto->idproducto}}</td>
                                         <td class="px-2 py-1 font-semibold leading-tight text-blue-700 bg-blue-200 rounded-sm">

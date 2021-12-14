@@ -52,9 +52,15 @@
                             <label for="celular" class="text-sm font-medium text-gray-900 block mb-2">Celular: </label>
                             <input value=" {{old('celular', $proveedor->celular)}} " type="text" id="celular" name="celular" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
                         </div>
-                        <div class="mb-6">
-                            <label for="estado" class="text-sm font-medium text-gray-900 block mb-2">estado: </label>
-                            <input value=" {{old('estado', $proveedor->estado)}} " type="text" id="estado" name="estado" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
+                        <label for="estado" class="text-sm font-medium text-gray-900 block mb-2">
+                            Estado:
+                            <br>
+                        </label>
+                        <div class="flex items-center mb-5">
+                            <select name="estado" class=" bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                <option value="activo">Activo</option>
+                                <option value="inactivo">Inactivo</option>
+                            </select>
                         </div>
                         <div style="text-align: center;">
                             <a href="{{ route('proveedor.index') }}"

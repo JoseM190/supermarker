@@ -29,12 +29,12 @@
                         @csrf
                         <br>
                         <div class="mb-6">
-                            <label for="cedula" class="text-sm font-medium text-gray-900 block mb-2">Cedula: </label>
-                            <input type="text" id="cedula" name="cedula"
+                            <label for="cedula_cliente" class="text-sm font-medium text-gray-900 block mb-2">Cedula: </label>
+                            <input type="text" id="cedula_cliente" name="cedula_cliente"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                placeholder="Ingrese su Cedula" value=" {{old('cedula')}} ">
+                                placeholder="Ingrese su Cedula" value=" {{old('cedula_cliente')}} ">
                         </div>
-                        @error('cedula')
+                        @error('cedula_cliente')
                             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
                                 role="alert">
                                 <span class="block sm:inline">{{$message}}</span>
@@ -48,12 +48,12 @@
                             </div>
                         @enderror
                         <div class="mb-6">
-                            <label for="nombre" class="text-sm font-medium text-gray-900 block mb-2">Nombre: </label>
-                            <input type="text" id="nombre" name="nombre"
+                            <label for="nombre_cliente" class="text-sm font-medium text-gray-900 block mb-2">Nombre: </label>
+                            <input type="text" id="nombre_cliente" name="nombre_cliente"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                placeholder="Ingrese su Nombre" value=" {{old('nombre')}} ">
+                                placeholder="Ingrese su Nombre" value=" {{old('nombre_cliente')}} ">
                         </div>
-                        @error('nombre')
+                        @error('nombre_cliente')
                             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
                                 role="alert">
                                 <span class="block sm:inline">{{$message}}</span>
@@ -67,12 +67,12 @@
                             </div>
                         @enderror
                         <div class="mb-6">
-                            <label for="apellido" class="text-sm font-medium text-gray-900 block mb-2">Apellido: </label>
-                            <input type="text" id="apellido" name="apellido"
+                            <label for="apellido_cliente" class="text-sm font-medium text-gray-900 block mb-2">Apellido: </label>
+                            <input type="text" id="apellido_cliente" name="apellido_cliente"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                placeholder="Ingrese su Apellido" value=" {{old('apellido')}} ">
+                                placeholder="Ingrese su Apellido" value=" {{old('apellido_cliente')}} ">
                         </div>
-                        @error('apellido')
+                        @error('apellido_cliente')
                             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
                                 role="alert">
                                 <span class="block sm:inline">{{$message}}</span>
@@ -86,12 +86,12 @@
                             </div>
                         @enderror
                         <div class="mb-6">
-                            <label for="celular" class="text-sm font-medium text-gray-900 block mb-2">Celular: </label>
-                            <input type="text" id="celular" name="celular"
+                            <label for="celular_cliente" class="text-sm font-medium text-gray-900 block mb-2">Celular: </label>
+                            <input type="text" id="celular_cliente" name="celular_cliente"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                value=" {{old('celular')}} ">
+                                placeholder="Ingrese su Celular" value=" {{old('celular_cliente')}} ">
                         </div>
-                        @error('celular')
+                        @error('celular_cliente')
                             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
                                 role="alert">
                                 <span class="block sm:inline">{{$message}}</span>

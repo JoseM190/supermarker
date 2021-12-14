@@ -12,7 +12,7 @@
                         <div class="text-sm mt-2">
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                @foreach ($usuarios as $usuario)
+                                @foreach ($usuario as $usuario)
                                     @if ($usuario->idusuario == $compra->usuarioid)
                                         Usuario: {{$usuario->nombre}}
                                     @endif
@@ -20,7 +20,7 @@
                             </div>
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                @foreach ($proveedores as $proveedor)
+                                @foreach ($proveedor as $proveedor)
                                     @if ($proveedor->idproveedor == $compra->proveedorid)
                                         Proveedor: {{$proveedor->nombre}}
                                     @endif
@@ -28,7 +28,7 @@
                             </div>
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                @foreach ($productos as $producto)
+                                @foreach ($producto as $producto)
                                     @if ($producto->idproducto == $compra->productoid)
                                         Producto: {{$producto->nombre}}
                                     @endif

@@ -23,7 +23,7 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white">
-                                    @foreach ($cargos as $cargo)
+                                    @foreach ($cargo as $cargo)
                                         <tr class="text-gray-700">
                                             <td class="px-4 py-3 text-ms font-semibold border">{{$cargo->idcargo}}</td>
                                             <td class="px-4 py-3 text-ms font-semibold border">{{$cargo->nombre_cargo}}</td>

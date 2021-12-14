@@ -16,10 +16,10 @@ class Clientes extends Migration
     {
         Schema::create('clientes', function (Blueprint $table) {
             $table->bigIncrements('idcliente');
-            $table->string('cedula');
-            $table->string('nombre');
-            $table->string('apellido');
-            $table->integer('celular');
+            $table->string('cedula_cliente');
+            $table->string('nombre_cliente');
+            $table->string('apellido_cliente');
+            $table->integer('celular_cliente');
             $table->timestamps();
         });
     }

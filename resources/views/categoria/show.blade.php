@@ -12,7 +12,7 @@
                         <div class="text-sm mt-2">
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                Nombre: {{$categoria->nombre}}
+                                Nombre de la Categoria: {{$categoria->nombre}}
                             </div>
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">

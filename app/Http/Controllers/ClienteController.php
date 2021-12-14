@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 class ClienteController extends Controller
 {
     public function index(){
-        $clientes = Cliente::all();
-        return view('cliente.index', compact('clientes'));
+        $cliente = Cliente::all();
+        return view('cliente.index', compact('cliente'));
     }
 
     public function create(){
@@ -18,17 +18,17 @@ class ClienteController extends Controller
 
     public function store(Request $request){
         $request->validate([
-            'cedula' => 'required',
-            'nombre' => 'required',
-            'apellido' => 'required',
-            'celular' => 'required'
+            'cedula_cliente' => 'required',
+            'nombre_cliente' => 'required',
+            'apellido_cliente' => 'required',
+            'celular_cliente' => 'required'
         ]);
 
         $cliente = new Cliente;
-        $cliente->cedula = $request->input('cedula');
-        $cliente->nombre = $request->input('nombre');
-        $cliente->apellido = $request->input('apellido');
-        $cliente->celular = $request->input('celular');
+        $cliente->cedula_cliente = $request->input('cedula_cliente');
+        $cliente->nombre_cliente = $request->input('nombre_cliente');
+        $cliente->apellido_cliente = $request->input('apellido_cliente');
+        $cliente->celular_cliente = $request->input('celular_cliente');
         $cliente->save();
 
         return redirect()->route('cliente.show', $cliente);
@@ -44,24 +44,24 @@ class ClienteController extends Controller
 
     public function update(Request $request, Cliente $cliente){
         $request->validate([
-            'cedula' => 'required',
-            'nombre' => 'required',
-            'apellido' => 'required',
-            'celular' => 'required'
+            'cedula_cliente' => 'required',
+            'nombre_cliente' => 'required',
+            'apellido_cliente' => 'required',
+            'celular_cliente' => 'required'
         ]);
 
-        $cliente->cedula = $request->input('cedula');
-        $cliente->nombre = $request->input('nombre');
-        $cliente->apellido = $request->input('apellido');
-        $cliente->celular = $request->input('celular');
+        $cliente->cedula_cliente = $request->input('cedula_cliente');
+        $cliente->nombre_cliente = $request->input('nombre_cliente');
+        $cliente->apellido_cliente = $request->input('apellido_cliente');
+        $cliente->celular_cliente = $request->input('celular_cliente');
         $cliente->save();
 
-        $clientes = Cliente::all();
-        return view('cliente.index', compact('clientes'));
+        $cliente = Cliente::all();
+        return view('cliente.index', compact('cliente'));
     }
 
     public function destroy(Cliente $cliente){
         $cliente->delete();
-        return redirect()->route('cliente.index')->with('status', 'Cliente eliminado');
+        return redirect()->route('cliente.index');
     }
 }

@@ -25,7 +25,7 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white">
-                                    @foreach ($categorias as $categoria)
+                                    @foreach ($categoria as $categoria)
                                         <tr class="text-gray-700">
                                             <td class="px-4 py-3 text-ms font-semibold border">{{$categoria->idcategoria}}</td>
                                             <td class="px-4 py-3 text-ms font-semibold border">{{$categoria->nombre}}</td>

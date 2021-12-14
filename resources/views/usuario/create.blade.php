@@ -28,19 +28,19 @@
                     <form action="{{route('usuario.store')}}" method="POST">
                         @csrf
                         <br>
-                        <label for="cargoid" class="text-sm font-medium text-gray-900 block mb-2">Cargo: </label>
-                        <select name="cargoid" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" >
-                            @foreach ($cargos as $cargo)
+                        <label for="idcargo" class="text-sm font-medium text-gray-900 block mb-2">Cargo: </label>
+                        <select name="idcargo" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" >
+                            @foreach ($cargo as $cargo)
                                 <option value="{{$cargo->idcargo}}">{{$cargo->nombre_cargo}}</option>
                             @endforeach
                         </select><br>
                         <div class="mb-6">
-                            <label for="nombre" class="text-sm font-medium text-gray-900 block mb-2">Nombre: </label>
-                            <input type="text" id="nombre" name="nombre"
+                            <label for="nombre_usuario" class="text-sm font-medium text-gray-900 block mb-2">Nombre: </label>
+                            <input type="text" id="nombre_usuario" name="nombre_usuario"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                placeholder="Ingrese su Nombre" value=" {{old('nombre')}} ">
+                                placeholder="Ingrese su Nombre" value=" {{old('nombre_usuario')}} ">
                         </div>
-                        @error('nombre')
+                        @error('nombre_usuario')
                             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
                                 role="alert">
                                 <span class="block sm:inline">{{$message}}</span>
@@ -54,12 +54,12 @@
                             </div>
                         @enderror
                         <div class="mb-6">
-                            <label for="apellido" class="text-sm font-medium text-gray-900 block mb-2">Apellido: </label>
-                            <input type="text" id="apellido" name="apellido"
+                            <label for="apellido_usuario" class="text-sm font-medium text-gray-900 block mb-2">Apellido: </label>
+                            <input type="text" id="apellido_usuario" name="apellido_usuario"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                placeholder="Ingrese su Apellido" value=" {{old('apellido')}} ">
+                                placeholder="Ingrese su Apellido" value=" {{old('apellido_usuario')}} ">
                         </div>
-                        @error('apellido')
+                        @error('apellido_usuario')
                             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
                                 role="alert">
                                 <span class="block sm:inline">{{$message}}</span>
@@ -73,12 +73,12 @@
                             </div>
                         @enderror
                         <div class="mb-6">
-                            <label for="cedula" class="text-sm font-medium text-gray-900 block mb-2">Cedula: </label>
-                            <input type="text" id="cedula" name="cedula"
+                            <label for="cedula_usuario" class="text-sm font-medium text-gray-900 block mb-2">Cedula: </label>
+                            <input type="text" id="cedula_usuario" name="cedula_usuario"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                placeholder="Ingrese su Cedula" value=" {{old('cedula')}} ">
+                                placeholder="Ingrese su Cedula" value=" {{old('cedula_usuario')}} ">
                         </div>
-                        @error('cedula')
+                        @error('cedula_usuario')
                             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
                                 role="alert">
                                 <span class="block sm:inline">{{$message}}</span>
@@ -92,12 +92,12 @@
                             </div>
                         @enderror
                         <div class="mb-6">
-                            <label for="celular" class="text-sm font-medium text-gray-900 block mb-2">Celular: </label>
-                            <input type="text" id="celular" name="celular"
+                            <label for="celular_usuario" class="text-sm font-medium text-gray-900 block mb-2">Celular: </label>
+                            <input type="text" id="celular_usuario" name="celular_usuario"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                value=" {{old('celular')}} ">
+                                placeholder="Ingrese su Celular" value=" {{old('celular_usuario')}} ">
                         </div>
-                        @error('celular')
+                        @error('celular_usuario')
                             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
                                 role="alert">
                                 <span class="block sm:inline">{{$message}}</span>
@@ -111,12 +111,12 @@
                             </div>
                         @enderror
                         <div class="mb-6">
-                            <label for="direccion" class="text-sm font-medium text-gray-900 block mb-2">Direccion: </label>
-                            <input type="text" id="direccion" name="direccion"
+                            <label for="direccion_usuario" class="text-sm font-medium text-gray-900 block mb-2">Direccion: </label>
+                            <input type="text" id="direccion_usuario" name="direccion_usuario"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                value=" {{old('direccion')}} ">
+                                placeholder="Ingrese su direccion" value=" {{old('direccion_usuario')}} ">
                         </div>
-                        @error('direccion')
+                        @error('direccion_usuario')
                             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
                                 role="alert">
                                 <span class="block sm:inline">{{$message}}</span>
@@ -130,12 +130,12 @@
                             </div>
                         @enderror
                         <div class="mb-6">
-                            <label for="correo" class="text-sm font-medium text-gray-900 block mb-2">Correo: </label>
-                            <input type="email" id="correo" name="correo"
+                            <label for="correo_usuario" class="text-sm font-medium text-gray-900 block mb-2">Correo: </label>
+                            <input type="email" id="correo_usuario" name="correo_usuario"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                value=" {{old('correo')}} ">
+                                placeholder="usuario@example.com" value=" {{old('correo_usuario')}} ">
                         </div>
-                        @error('correo')
+                        @error('correo_usuario')
                             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
                                 role="alert">
                                 <span class="block sm:inline">{{$message}}</span>
@@ -149,12 +149,12 @@
                             </div>
                         @enderror
                         <div class="mb-6">
-                            <label for="contraseña" class="text-sm font-medium text-gray-900 block mb-2">Contraseña: </label>
-                            <input type="password" id="contraseña" name="contraseña"
+                            <label for="contraseña_usuario" class="text-sm font-medium text-gray-900 block mb-2">Contraseña: </label>
+                            <input type="password" id="contraseña_usuario" name="contraseña_usuario"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                value=" {{old('contraseña')}} ">
+                                placeholder="****" value=" {{old('contraseña_usuario')}} ">
                         </div>
-                        @error('contraseña')
+                        @error('contraseña_usuario')
                             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
                                 role="alert">
                                 <span class="block sm:inline">{{$message}}</span>
@@ -167,12 +167,12 @@
                                 </span>
                             </div>
                         @enderror
-                        <label for="estado" class="text-sm font-medium text-gray-900 block mb-2">
+                        <label for="estado_usuario" class="text-sm font-medium text-gray-900 block mb-2">
                             Estado:
                             <br>
                         </label>
                         <div class="flex items-center mb-5">
-                            <select name="estado" class=" bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <select name="estado_usuario" class=" bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                 <option value="activo">Activo</option>
                                 <option value="inactivo">Inactivo</option>
                             </select>

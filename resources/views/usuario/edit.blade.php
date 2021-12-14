@@ -28,46 +28,46 @@
                     <form action="{{route('usuario.update', $usuario->idusuario)}}" method="POST">
                         @csrf @method('PUT')
                         <br>
-                        <label for="cargoid" class="text-sm font-medium text-gray-900 block mb-2">Cargo: </label>
-                        <select name="cargoid" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
-                            @foreach ($cargos as $cargo)
+                        <label for="idcargo" class="text-sm font-medium text-gray-900 block mb-2">Cargo: </label>
+                        <select name="idcargo" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            @foreach ($cargo as $cargo)
                                 <option value="{{$cargo->idcargo}}">{{$cargo->nombre_cargo}}</option>
                             @endforeach
                         </select>
                         <div class="mb-6">
-                            <label for="nombre" class="text-sm font-medium text-gray-900 block mb-2">Nombre: </label>
-                            <input value=" {{old('nombre', $usuario->nombre)}} " type="text" id="nombre" name="nombre" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
+                            <label for="nombre_usuario" class="text-sm font-medium text-gray-900 block mb-2">Nombre: </label>
+                            <input value=" {{old('nombre_usuario', $usuario->nombre_usuario)}} " type="text" id="nombre_usuario" name="nombre_usuario" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
                         </div>
                         <div class="mb-6">
-                            <label for="apellido" class="text-sm font-medium text-gray-900 block mb-2">Apellido: </label>
-                            <input value=" {{old('apellido', $usuario->apellido)}} " type="text" id="apellido" name="apellido" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
+                            <label for="apellido_usuario" class="text-sm font-medium text-gray-900 block mb-2">Apellido: </label>
+                            <input value=" {{old('apellido_usuario', $usuario->apellido_usuario)}} " type="text" id="apellido_usuario" name="apellido_usuario" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
                         </div>
                         <div class="mb-6">
-                            <label for="cedula" class="text-sm font-medium text-gray-900 block mb-2">Cedula: </label>
-                            <input value=" {{old('cedula', $usuario->cedula)}} " type="text" id="cedula" name="cedula" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
+                            <label for="cedula_usuario" class="text-sm font-medium text-gray-900 block mb-2">Cedula: </label>
+                            <input value=" {{old('cedula_usuario', $usuario->cedula_usuario)}} " type="text" id="cedula_usuario" name="cedula_usuario" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
                         </div>
                         <div class="mb-6">
-                            <label for="celular" class="text-sm font-medium text-gray-900 block mb-2">Celular: </label>
-                            <input value=" {{old('celular', $usuario->celular)}} " type="text" id="celular" name="celular" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
+                            <label for="celular_usuario" class="text-sm font-medium text-gray-900 block mb-2">Celular: </label>
+                            <input value=" {{old('celular_usuario', $usuario->celular_usuario)}} " type="text" id="celular_usuario" name="celular_usuario" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
                         </div>
                         <div class="mb-6">
-                            <label for="direccion" class="text-sm font-medium text-gray-900 block mb-2">Direccion: </label>
-                            <input value=" {{old('direccion', $usuario->direccion)}} " type="text" id="direccion" name="direccion" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
+                            <label for="direccion_usuario" class="text-sm font-medium text-gray-900 block mb-2">Direccion: </label>
+                            <input value=" {{old('direccion_usuario', $usuario->direccion_usuario)}} " type="text" id="direccion" name="direccion_usuario" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
                         </div>
                         <div class="mb-6">
-                            <label for="correo" class="text-sm font-medium text-gray-900 block mb-2">Correo: </label>
-                            <input value=" {{old('correo', $usuario->correo)}} " type="email" id="correo" name="correo" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
+                            <label for="correo_usuario" class="text-sm font-medium text-gray-900 block mb-2">Correo: </label>
+                            <input value=" {{old('correo_usuario', $usuario->correo_usuario)}} " type="email" id="correo_usuario" name="correo_usuario" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
                         </div>
                         <div class="mb-6">
-                            <label for="contraseña" class="text-sm font-medium text-gray-900 block mb-2">Contraseña: </label>
-                            <input value=" {{old('contraseña', $usuario->contraseña)}} " type="password" id="contraseña" name="contraseña" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
+                            <label for="contraseña_usuario" class="text-sm font-medium text-gray-900 block mb-2">Contraseña: </label>
+                            <input value=" {{old('contraseña_usuario', $usuario->contraseña_usuario)}} " type="password" id="contraseña_usuario" name="contraseña_usuario" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
                         </div>
-                        <label for="estado" class="text-sm font-medium text-gray-900 block mb-2">
+                        <label for="estado_usuario" class="text-sm font-medium text-gray-900 block mb-2">
                             Estado:
                             <br>
                         </label>
                         <div class="flex items-center mb-5">
-                            <select name="estado" class=" bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                            <select name="estado_usuario" class=" bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                 <option value="activo">Activo</option>
                                 <option value="inactivo">Inactivo</option>
                             </select>

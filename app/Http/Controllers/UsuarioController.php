@@ -9,86 +9,86 @@ use Illuminate\Http\Request;
 class UsuarioController extends Controller
 {
     public function index(){
-        $usuarios = Usuario::all();
-        $cargos = Cargo::all();
-        return view('usuario.index', compact(['usuarios', 'cargos']));
+        $usuario = Usuario::all();
+        $cargo = Cargo::all();
+        return view('usuario.index', compact(['usuario', 'cargo']));
     }
 
     public function create(){
-        $cargos = Cargo::all();
-        return view('usuario.create', compact('cargos'));
+        $cargo = Cargo::all();
+        return view('usuario.create', compact('cargo'));
     }
 
     public function store(Request $request){
         $request->validate([
-            'cargoid' => 'required',
-            'nombre' => 'required',
-            'apellido' => 'required',
-            'cedula' => 'required',
-            'celular' => 'required',
-            'direccion' => 'required',
-            'correo' => 'required',
-            'contraseña' => 'required',
-            'estado' => 'required'
+            'idcargo' => 'required',
+            'nombre_usuario' => 'required',
+            'apellido_usuario' => 'required',
+            'cedula_usuario' => 'required',
+            'celular_usuario' => 'required',
+            'direccion_usuario' => 'required',
+            'correo_usuario' => 'required',
+            'contraseña_usuario' => 'required',
+            'estado_usuario' => 'required'
         ]);
 
         $usuario = new Usuario;
-        $usuario->cargoid = $request['cargoid'];
-        $usuario->nombre = $request->input('nombre');
-        $usuario->apellido = $request->input('apellido');
-        $usuario->cedula = $request->input('cedula');
-        $usuario->celular = $request->input('celular');
-        $usuario->direccion = $request->input('direccion');
-        $usuario->correo = $request->input('correo');
-        $usuario->contraseña = $request->input('contraseña');
-        $usuario->estado = $request->input('estado');
+        $usuario->idcargo = $request['idcargo'];
+        $usuario->nombre_usuario = $request->input('nombre_usuario');
+        $usuario->apellido_usuario = $request->input('apellido_usuario');
+        $usuario->cedula_usuario = $request->input('cedula_usuario');
+        $usuario->celular_usuario = $request->input('celular_usuario');
+        $usuario->direccion_usuario = $request->input('direccion_usuario');
+        $usuario->correo_usuario = $request->input('correo_usuario');
+        $usuario->contraseña_usuario = $request->input('contraseña_usuario');
+        $usuario->estado_usuario = $request->input('estado_usuario');
         $usuario->save();
 
-        $usuarios = Usuario::all();
-        $cargos = Cargo::all();
-        return view('usuario.index', compact(['usuarios', 'cargos']));
+        $usuario = Usuario::all();
+        $cargo = Cargo::all();
+        return view('usuario.show', compact(['usuario', 'cargo']));
     }
 
     public function show(Usuario $usuario){
-        $cargos = Cargo::all();
-        return view('usuario.show', compact(['usuario', 'cargos']));
+        $cargo = Cargo::all();
+        return view('usuario.show', compact(['usuario', 'cargo']));
     }
 
     public function edit(Usuario $usuario){
-        $cargos = Cargo::all();
-        return view('usuario.edit', compact(['usuario', 'cargos']));
+        $cargo = Cargo::all();
+        return view('usuario.edit', compact(['usuario', 'cargo']));
     }
 
     public function update(Request $request, Usuario $usuario){
         $request->validate([
-            'cargoid' => 'required',
-            'nombre' => 'required',
-            'apellido' => 'required',
-            'cedula' => 'required',
-            'celular' => 'required',
-            'direccion' => 'required',
-            'correo' => 'required',
-            'contraseña' => 'required',
-            'estado' => 'required'
+            'idcargo' => 'required',
+            'nombre_usuario' => 'required',
+            'apellido_usuario' => 'required',
+            'cedula_usuario' => 'required',
+            'celular_usuario' => 'required',
+            'direccion_usuario' => 'required',
+            'correo_usuario' => 'required',
+            'contraseña_usuario' => 'required',
+            'estado_usuario' => 'required'
         ]);
 
-        $usuario->cargoid = $request['cargoid'];
-        $usuario->nombre = $request->input('nombre');
-        $usuario->apellido = $request->input('apellido');
-        $usuario->cedula = $request->input('cedula');
-        $usuario->celular = $request->input('celular');
-        $usuario->direccion = $request->input('direccion');
-        $usuario->correo = $request->input('correo');
-        $usuario->contraseña = $request->input('contraseña');
-        $usuario->estado = $request->input('estado');
+        $usuario->idcargo = $request['idcargo'];
+        $usuario->nombre_usuario = $request->input('nombre_usuario');
+        $usuario->apellido_usuario = $request->input('apellido_usuario');
+        $usuario->cedula_usuario = $request->input('cedula_usuario');
+        $usuario->celular_usuario = $request->input('celular_usuario');
+        $usuario->direccion_usuario = $request->input('direccion_usuario');
+        $usuario->correo_usuario = $request->input('correo_usuario');
+        $usuario->contraseña_usuario = $request->input('contraseña_usuario');
+        $usuario->estado_usuario = $request->input('estado_usuario');
         $usuario->save();
 
-        $cargos = Cargo::all();
-        return view('usuario.index', compact(['usuario', 'cargos']));
+        $cargo = Cargo::all();
+        return view('usuario.index', compact(['usuario', 'cargo']));
     }
 
     public function destroy(Usuario $usuario){
         $usuario->delete();
-        return redirect()->route('usuario.index')->with('status', 'Usuario eliminado');
+        return redirect()->route('usuario.index');
     }
 }

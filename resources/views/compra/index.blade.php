@@ -32,7 +32,7 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white">
-                                    @foreach ($compras as $compra)
+                                    @foreach ($compra as $compra)
                                         <tr class="text-gray-700">
                                             <td class="px-4 py-3 text-ms font-semibold border">{{$compra->idcompra}}</td>
                                             <td class="px-2 py-1 font-semibold leading-tight text-blue-700 bg-blue-200 rounded-sm">

@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 class CargoController extends Controller
 {
     public function index(){
-        $cargos = Cargo::all();
-        return view('cargo.index', compact('cargos'));
+        $cargo = Cargo::all();
+        return view('cargo.index', compact('cargo'));
     }
 
     public function create(){
@@ -44,12 +44,12 @@ class CargoController extends Controller
         $cargo->nombre_cargo = $request->input('nombre_cargo');
         $cargo->save();
 
-        $cargos = Cargo::all();
-        return view('cargo.index', compact('cargos'));
+        $cargo = Cargo::all();
+        return view('cargo.index', compact('cargo'));
     }
 
     public function destroy(Cargo $cargo){
         $cargo->delete();
-        return redirect()->route('cargo.index')->with('status', 'Cargo eliminado');
+        return redirect()->route('cargo.index');
     }
 }

@@ -11,18 +11,18 @@ use Illuminate\Http\Request;
 class CompraController extends Controller
 {
     public function index(){
-        $compras = Compra::all();
-        $usuarios = Usuario::all();
-        $proveedores = Proveedore::all();
-        $productos = Producto::all();
-        return view('compra.index', compact(['compras', 'usuarios', 'proveedores', 'productos']));
+        $compra = Compra::all();
+        $usuario = Usuario::all();
+        $proveedor = Proveedore::all();
+        $producto = Producto::all();
+        return view('compra.index', compact(['compra', 'usuario', 'proveedor', 'producto']));
     }
 
     public function create(){
-        $usuarios = Usuario::all();
-        $proveedores = Proveedore::all();
-        $productos = Producto::all();
-        return view('compra.create', compact(['usuarios', 'proveedores', 'productos']));
+        $usuario = Usuario::all();
+        $proveedor = Proveedore::all();
+        $producto = Producto::all();
+        return view('compra.create', compact(['usuario', 'proveedor', 'producto']));
     }
 
     public function store(Request $request){
@@ -52,25 +52,25 @@ class CompraController extends Controller
         $compra->total = $request->input('total');
         $compra->save();
 
-        $compras = Compra::all();
-        $usuarios = Usuario::all();
-        $proveedores = Proveedore::all();
-        $productos = Producto::all();
-        return view('compra.index', compact(['compras', 'usuarios', 'proveedores', 'productos']));
+        $compra = Compra::all();
+        $usuario = Usuario::all();
+        $proveedor = Proveedore::all();
+        $producto = Producto::all();
+        return view('compra.index', compact(['compra', 'usuario', 'proveedor', 'producto']));
     }
 
     public function show(Compra $compra){
-        $usuarios = Usuario::all();
-        $proveedores = Proveedore::all();
-        $productos = Producto::all();
-        return view('compra.show', compact(['compra', 'usuarios', 'proveedores', 'productos']));
+        $usuario = Usuario::all();
+        $proveedor = Proveedore::all();
+        $producto = Producto::all();
+        return view('compra.show', compact(['compra', 'usuario', 'proveedor', 'producto']));
     }
 
     public function edit(Compra $compra){
-        $usuarios = Usuario::all();
-        $proveedores = Proveedore::all();
-        $productos = Producto::all();
-        return view('compra.edit', compact(['compra', 'usuarios', 'proveedores', 'productos']));
+        $usuario = Usuario::all();
+        $proveedor = Proveedore::all();
+        $producto = Producto::all();
+        return view('compra.edit', compact(['compra', 'usuarios', 'proveedor', 'productos']));
     }
 
     public function update(Request $request, Compra $compra){
@@ -99,14 +99,14 @@ class CompraController extends Controller
         $compra->total = $request->input('total');
         $compra->save();
 
-        $usuarios = Usuario::all();
-        $proveedores = Proveedore::all();
-        $productos = Producto::all();
-        return view('compra.index', compact(['compra', 'usuarios', 'proveedores', 'productos']));
+        $usuario = Usuario::all();
+        $proveedor = Proveedore::all();
+        $producto = Producto::all();
+        return view('compra.index', compact(['compra', 'usuario', 'proveedor', 'producto']));
     }
 
     public function destroy(Compra $compra){
         $compra->delete();
-        return redirect()->route('compra.index')->with('status', 'Compra eliminado');
+        return redirect()->route('compra.index');
     }
 }

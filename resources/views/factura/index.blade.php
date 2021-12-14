@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Factura
+            Facturas
         </h2>
     </x-slot>
     <div class="py-12">
@@ -28,7 +28,7 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white">
-                                    @foreach ($facturas as $factura)
+                                    @foreach ($factura as $factura)
                                         <tr class="text-gray-700">
                                             <td class="px-4 py-3 text-ms font-semibold border">{{$factura->idfactura}}</td>
                                             <td class="px-2 py-1 font-semibold leading-tight text-blue-700 bg-blue-200 rounded-sm">

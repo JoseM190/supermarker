@@ -31,7 +31,7 @@
                         <div class="flex items-center mb-5">
                             <label for="usuarioid" class="inline-block w-20 mr-6 text-right font-bold text-gray-600">Usuario: </label>
                             <select name="usuarioid" class="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400 outline-none">
-                                @foreach ($usuarios as $usuario)
+                                @foreach ($usuario as $usuario)
                                     <option value="{{$usuario->usuarioid}}">{{$usuario->idusuario}}</option>
                                 @endforeach
                             </select>
@@ -39,7 +39,7 @@
                         <div class="flex items-center mb-5">
                             <label for="proveedorid" class="inline-block w-20 mr-6 text-right font-bold text-gray-600">Proveedor: </label>
                             <select name="proveedorid" class="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400 outline-none">
-                                @foreach ($proveedores as $proveedor)
+                                @foreach ($proveedor as $proveedor)
                                     <option value="{{$proveedor->proveedorid}}">{{$proveedor->idproveedor}}</option>
                                 @endforeach
                             </select>
@@ -47,7 +47,7 @@
                         <div class="flex items-center mb-5">
                             <label for="productoid" class="inline-block w-20 mr-6 text-right font-bold text-gray-600">Producto: </label>
                             <select name="productoid" class="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400 outline-none">
-                                @foreach ($productos as $producto)
+                                @foreach ($producto as $producto)
                                     <option value="{{$producto->productoid}}">{{$producto->idproducto}}</option>
                                 @endforeach
                             </select>

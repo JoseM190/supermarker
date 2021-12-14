@@ -9,14 +9,14 @@ use Illuminate\Http\Request;
 class VentaController extends Controller
 {
     public function index(){
-        $ventas = Venta::all();
-        $productos = Producto::all();
-        return view('venta.index', compact(['ventas', 'productos']));
+        $venta = Venta::all();
+        $producto = Producto::all();
+        return view('venta.index', compact(['venta', 'producto']));
     }
 
     public function create(){
-        $productos = Producto::all();
-        return view('venta.create', compact('productos'));
+        $producto = Producto::all();
+        return view('venta.create', compact('producto'));
     }
 
     public function store(Request $request){
@@ -36,19 +36,19 @@ class VentaController extends Controller
         $venta->subtotal = $request->input('subtotal');
         $venta->save();
 
-        $ventas = Venta::all();
-        $productos = Producto::all();
-        return view('venta.index', compact(['ventas', 'productos']));
+        $venta = Venta::all();
+        $producto = Producto::all();
+        return view('venta.index', compact(['venta', 'producto']));
     }
 
     public function show(Venta $venta){
-        $productos = Producto::all();
-        return view('venta.show', compact(['venta', 'productos']));
+        $producto = Producto::all();
+        return view('venta.show', compact(['venta', 'producto']));
     }
 
     public function edit(Venta $venta){
-        $productos = Producto::all();
-        return view('venta.edit', compact(['venta', 'productos']));
+        $producto = Producto::all();
+        return view('venta.edit', compact(['venta', 'producto']));
     }
 
     public function update(Request $request, Venta $venta){
@@ -67,12 +67,12 @@ class VentaController extends Controller
         $venta->subtotal = $request->input('subtotal');
         $venta->save();
 
-        $productos = Producto::all();
-        return view('venta.index', compact(['venta', 'productos']));
+        $producto = Producto::all();
+        return view('venta.index', compact(['venta', 'producto']));
     }
 
     public function destroy(Venta $venta){
         $venta->delete();
-        return redirect()->route('venta.index')->with('status', 'Venta eliminado');
+        return redirect()->route('venta.index');
     }
 }

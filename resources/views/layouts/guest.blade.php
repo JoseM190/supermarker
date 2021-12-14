@@ -16,6 +16,22 @@
 
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
+
+        <script src="https://www.google.com/recaptcha/api.js?render=6LeVVqEdAAAAACw1satZStg2pNkfFZRjGtu_Q0qt"></script>
+        <script>
+            $(document).ready(function(){
+                $('#registrar').click(function(){
+                    grecaptcha.ready(function() {
+                    grecaptcha.execute('6LeVVqEdAAAAACw1satZStg2pNkfFZRjGtu_Q0qt', {
+                        action: 'registro'
+                    }).then(function(token) {
+                        // Add your logic to submit to your backend server here.
+                    });
+                });
+                })
+
+            })
+        </script>
     </head>
     <body>
         <div class="font-sans text-gray-900 antialiased">

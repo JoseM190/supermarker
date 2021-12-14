@@ -29,20 +29,20 @@
                         @csrf @method('PUT')
                         <br>
                         <div class="mb-6">
-                            <label for="cedula" class="text-sm font-medium text-gray-900 block mb-2">Cedula: </label>
-                            <input value=" {{old('cedula', $cliente->cedula)}} " type="text" id="cedula" name="cedula" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
+                            <label for="cedula_cliente" class="text-sm font-medium text-gray-900 block mb-2">Cedula: </label>
+                            <input value=" {{old('cedula_cliente', $cliente->cedula_cliente)}} " type="text" id="cedula_cliente" name="cedula_cliente" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
                         </div>
                         <div class="mb-6">
-                            <label for="nombre" class="text-sm font-medium text-gray-900 block mb-2">Nombre: </label>
-                            <input value=" {{old('nombre', $cliente->nombre)}} " type="text" id="nombre" name="nombre" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
+                            <label for="nombre_cliente" class="text-sm font-medium text-gray-900 block mb-2">Nombre: </label>
+                            <input value=" {{old('nombre_cliente', $cliente->nombre_cliente)}} " type="text" id="nombre_cliente" name="nombre_cliente" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
                         </div>
                         <div class="mb-6">
-                            <label for="apellido" class="text-sm font-medium text-gray-900 block mb-2">Apellido: </label>
-                            <input value=" {{old('apellido', $cliente->apellido)}} " type="text" id="apellido" name="apellido" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
+                            <label for="apellido_cliente" class="text-sm font-medium text-gray-900 block mb-2">Apellido: </label>
+                            <input value=" {{old('apellido_cliente', $cliente->apellido_cliente)}} " type="text" id="apellido_cliente" name="apellido_cliente" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
                         </div>
                         <div class="mb-6">
-                            <label for="celular" class="text-sm font-medium text-gray-900 block mb-2">Celular: </label>
-                            <input value=" {{old('celular', $cliente->celular)}} " type="text" id="celular" name="celular" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
+                            <label for="celular_cliente" class="text-sm font-medium text-gray-900 block mb-2">Celular: </label>
+                            <input value=" {{old('celular_cliente', $cliente->celular_cliente)}} " type="text" id="celular_cliente" name="celular_cliente" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
                         </div>
                         <div style="text-align: center;">
                             <a href="{{ route('cliente.index') }}"

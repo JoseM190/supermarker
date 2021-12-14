@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 class ProveedorController extends Controller
 {
     public function index(){
-        $proveedores = Proveedore::all();
-        return view('proveedor.index', compact('proveedores'));
+        $proveedor = Proveedore::all();
+        return view('proveedor.index', compact('proveedor'));
     }
 
     public function create(){
@@ -68,12 +68,12 @@ class ProveedorController extends Controller
         $proveedor->estado = $request->input('estado');
         $proveedor->save();
 
-        $proveedores = Proveedore::all();
-        return view('proveedor.index', compact('proveedores'));
+        $proveedor = Proveedore::all();
+        return view('proveedor.index', compact('proveedor'));
     }
 
     public function destroy(Proveedore $proveedor){
         $proveedor->delete();
-        return redirect()->route('proveedor.index')->with('status', 'Proveedor eliminado');
+        return redirect()->route('proveedor.index');
     }
 }

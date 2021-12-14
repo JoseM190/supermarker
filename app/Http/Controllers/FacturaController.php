@@ -11,18 +11,18 @@ use Illuminate\Http\Request;
 class FacturaController extends Controller
 {
     public function index(){
-        $facturas = Factura::all();
-        $usuarios = Usuario::all();
-        $clientes = Cliente::all();
-        $ventas = Venta::all();
-        return view('factura.index', compact(['facturas', 'usuarios', 'clientes', 'ventas']));
+        $factura = Factura::all();
+        $usuario = Usuario::all();
+        $cliente = Cliente::all();
+        $venta = Venta::all();
+        return view('factura.index', compact(['factura', 'usuario', 'cliente', 'venta']));
     }
 
     public function create(){
-        $usuarios = Usuario::all();
-        $clientes = Cliente::all();
-        $ventas = Venta::all();
-        return view('factura.create', compact(['usuarios', 'clientes', 'ventas']));
+        $usuario = Usuario::all();
+        $cliente = Cliente::all();
+        $venta = Venta::all();
+        return view('factura.create', compact(['usuario', 'cliente', 'venta']));
     }
 
     public function store(Request $request){
@@ -44,25 +44,25 @@ class FacturaController extends Controller
         $factura->total = $request->input('total');
         $factura->save();
 
-        $facturas = Factura::all();
-        $usuarios = Usuario::all();
-        $clientes = Cliente::all();
-        $ventas = Venta::all();
-        return view('factura.index', compact(['facturas', 'usuarios', 'clientes', 'ventas']));
+        $factura = Factura::all();
+        $usuario = Usuario::all();
+        $cliente = Cliente::all();
+        $venta = Venta::all();
+        return view('factura.index', compact(['factura', 'usuario', 'cliente', 'venta']));
     }
 
     public function show(Factura $factura){
-        $usuarios = Usuario::all();
-        $clientes = Cliente::all();
-        $ventas = Venta::all();
-        return view('factura.show', compact(['factuta', 'usuarios', 'clientes', 'ventas']));
+        $usuario = Usuario::all();
+        $cliente = Cliente::all();
+        $venta = Venta::all();
+        return view('factura.show', compact(['factura', 'usuario', 'cliente', 'venta']));
     }
 
     public function edit(Factura $factura){
-        $usuarios = Usuario::all();
-        $clientes = Cliente::all();
-        $ventas = Venta::all();
-        return view('factura.edit', compact(['factura', 'usuarios', 'clientes', 'ventas']));
+        $usuario = Usuario::all();
+        $cliente = Cliente::all();
+        $venta = Venta::all();
+        return view('factura.edit', compact(['factura', 'usuario', 'cliente', 'venta']));
     }
 
     public function update(Request $request, Factura $factura){
@@ -83,14 +83,14 @@ class FacturaController extends Controller
         $factura->total = $request->input('total');
         $factura->save();
 
-        $usuarios = Usuario::all();
-        $clientes = Cliente::all();
-        $ventas = Venta::all();
-        return view('factura.index', compact(['factura', 'usuarios', 'clientes', 'ventas']));
+        $usuario = Usuario::all();
+        $cliente = Cliente::all();
+        $venta = Venta::all();
+        return view('factura.index', compact(['factura', 'usuario', 'cliente', 'venta']));
     }
 
     public function destroy(Factura $factura){
         $factura->delete();
-        return redirect()->route('factura.index')->with('status', 'Factura eliminado');
+        return redirect()->route('factura.index');
     }
 }

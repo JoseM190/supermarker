@@ -31,28 +31,28 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white">
-                                    @foreach ($usuarios as $usuario)
+                                    @foreach ($usuario as $usuario)
                                         <tr class="text-gray-700">
                                             <td class="px-4 py-3 text-ms font-semibold border">{{$usuario->idusuario}}</td>
                                             <td class="px-4 py-3 text-xs border">
                                                 <span class="px-2 py-1 font-semibold leading-tight text-blue-700 bg-blue-200 rounded-sm">
-                                                    {{$usuario->cargoid}}
+                                                    {{$usuario->idcargo}}
                                                 </span>
                                             </td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{$usuario->nombre}}</td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{$usuario->apellido}}</td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{$usuario->cedula}}</td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{$usuario->celular}}</td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{$usuario->direccion}}</td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{$usuario->correo}}</td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{$usuario->contraseña}}</td>
-                                            @if($usuario->estado == 'activo')
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{$usuario->nombre_usuario}}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{$usuario->apellido_usuario}}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{$usuario->cedula_usuario}}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{$usuario->celular_usuario}}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{$usuario->direccion_usuario}}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{$usuario->correo_usuario}}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{$usuario->contraseña_usuario}}</td>
+                                            @if($usuario->estado_usuario == 'activo')
                                                 <td class="px-4 py-3 text-xs border">
-                                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> {{$usuario->estado}} </span>
+                                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> {{$usuario->estado_usuario}} </span>
                                                 </td>
                                             @else
                                                 <td class="px-4 py-3 text-xs border">
-                                                    <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-sm"> {{$usuario->estado}} </span>
+                                                    <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-sm"> {{$usuario->estado_usuario}} </span>
                                                 </td>
                                             @endif
                                             <td class="px-4 py-3 text-ms font-semibold border" style="text-align: center;">

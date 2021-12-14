@@ -10,16 +10,16 @@ use Illuminate\Http\Request;
 class ProductoController extends Controller
 {
     public function index(){
-        $productos = Producto::all();
-        $categorias = Categoria::all();
-        $proveedores = Proveedore::all();
-        return view('producto.index', compact(['productos', 'categorias', 'proveedores']));
+        $producto = Producto::all();
+        $categoria = Categoria::all();
+        $proveedor = Proveedore::all();
+        return view('producto.index', compact(['producto', 'categoria', 'proveedor']));
     }
 
     public function create(){
-        $categorias = Categoria::all();
-        $proveedores = Proveedore::all();
-        return view('producto.create', compact(['categorias', 'proveedores']));
+        $categoria = Categoria::all();
+        $proveedor = Proveedore::all();
+        return view('producto.create', compact(['categoria', 'proveedor']));
     }
 
     public function store(Request $request){
@@ -43,22 +43,22 @@ class ProductoController extends Controller
         $producto->stock = $request->input('stock');
         $producto->save();
 
-        $productos = Producto::all();
-        $categorias = Categoria::all();
-        $proveedores = Proveedore::all();
-        return view('producto.index', compact(['producto', 'categorias', 'proveedores']));
+        $producto = Producto::all();
+        $categoria = Categoria::all();
+        $proveedor = Proveedore::all();
+        return view('producto.index', compact(['producto', 'categoria', 'proveedor']));
     }
 
     public function show(Producto $producto){
-        $categorias = Categoria::all();
-        $proveedores = Proveedore::all();
-        return view('producto.show', compact(['producto', 'categorias', 'proveedores']));
+        $categoria = Categoria::all();
+        $proveedor = Proveedore::all();
+        return view('producto.show', compact(['producto', 'categoria', 'proveedor']));
     }
 
     public function edit(Producto $producto){
-        $categorias = Categoria::all();
-        $proveedores = Proveedore::all();
-        return view('producto.edit', compact(['producto', 'categorias', 'proveedores']));
+        $categoria = Categoria::all();
+        $proveedor = Proveedore::all();
+        return view('producto.edit', compact(['producto', 'categoria', 'proveedor']));
     }
 
     public function update(Request $request, Producto $producto){
@@ -81,13 +81,13 @@ class ProductoController extends Controller
         $producto->stock = $request->input('stock');
         $producto->save();
 
-        $categorias = Categoria::all();
-        $proveedores = Proveedore::all();
-        return view('producto.index', compact(['producto', 'categorias', 'proveedores']));
+        $categoria = Categoria::all();
+        $proveedor = Proveedore::all();
+        return view('producto.index', compact(['producto', 'categoria', 'proveedor']));
     }
 
     public function destroy(Producto $producto){
         $producto->delete();
-        return redirect()->route('producto.index')->with('status', 'Producto eliminado');
+        return redirect()->route('producto.index');
     }
 }

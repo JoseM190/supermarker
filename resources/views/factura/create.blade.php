@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Facturas
+            Factura
         </h2>
     </x-slot>
     <div class="py-12">
@@ -30,19 +30,19 @@
                         <br>
                         <label for="usuarioid" class="text-sm font-medium text-gray-900 block mb-2">Usuario: </label>
                         <select name="usuarioid" class=" bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" >
-                            @foreach ($usuarios as $usuario)
+                            @foreach ($usuario as $usuario)
                                 <option value="{{$usuario->idusuario}}">{{$usuario->nombre}}</option>
                             @endforeach
                         </select><br>
                         <label for="clientesid" class="text-sm font-medium text-gray-900 block mb-2">Cliente: </label>
                         <select name="clientesid" class=" bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" >
-                            @foreach ($clientes as $cliente)
+                            @foreach ($cliente as $cliente)
                                 <option value="{{$cliente->idcliente}}">{{$cliente->nombre}}</option>
                             @endforeach
                         </select><br>
                         <label for="ventaid" class="text-sm font-medium text-gray-900 block mb-2">Venta: </label>
                         <select name="ventaid" class=" bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" >
-                            @foreach ($ventas as $venta)
+                            @foreach ($venta as $venta)
                                 <option value="{{$venta->idventa}}">{{$venta->precio}}</option>
                             @endforeach
                         </select><br>

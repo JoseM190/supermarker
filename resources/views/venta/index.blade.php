@@ -27,7 +27,7 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white">
-                                    @foreach ($ventas as $venta)
+                                    @foreach ($venta as $venta)
                                         <tr class="text-gray-700">
                                             <td class="px-4 py-3 text-ms font-semibold border">{{$venta->idventa}}</td>
                                             <td class="px-4 py-3 text-xs border">

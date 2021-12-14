@@ -13,43 +13,43 @@
                             <div class="text-sm mt-2">
                                 <div
                                     class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                    @foreach ($cargos as $cargo)
-                                        @if ($cargo->idcargo == $usuario->cargoid)
+                                    @foreach ($cargo as $cargo)
+                                        @if ($cargo->idcargo == $cargo->idcargo)
                                             Cargo: {{$cargo->nombre_cargo}}
                                         @endif
                                     @endforeach
                                 </div>
                                 <div
                                     class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                    Nombre: {{$usuario->nombre}}
+                                    Nombre: {{$usuario->nombre_usuario}}
                                 </div>
                                 <div
                                     class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                    Apellido: {{$usuario->apellido}}
+                                    Apellido: {{$usuario->apellido_usuario}}
                                 </div>
                                 <div
                                     class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                    Cedula: {{$usuario->cedula}}
+                                    Cedula: {{$usuario->cedula_usuario}}
                                 </div>
                                 <div
                                     class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                    Celular: {{$usuario->celular}}
+                                    Celular: {{$usuario->celular_usuario}}
                                 </div>
                                 <div
                                     class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                    Direccion: {{$usuario->direccion}}
+                                    Direccion: {{$usuario->direccion_usuario}}
                                 </div>
                                 <div
                                     class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                    Correo: {{$usuario->correo}}
+                                    Correo: {{$usuario->correo_usuario}}
                                 </div>
                                 <div
                                     class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                    Contraseña: {{$usuario->contraseña}}
+                                    Contraseña: {{$usuario->contraseña_usuario}}
                                 </div>
                                 <div
                                     class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                    Estado: {{$usuario->estado}}
+                                    Estado: {{$usuario->estado_usuario}}
                                 </div>
                             </div>
                         </div>

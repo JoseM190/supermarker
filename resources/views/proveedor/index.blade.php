@@ -29,7 +29,7 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white">
-                                    @foreach ($proveedores as $proveedor)
+                                    @foreach ($proveedor as $proveedor)
                                         <tr class="text-gray-700">
                                             <td class="px-4 py-3 text-ms font-semibold border">{{$proveedor->idproveedor}}</td>
                                             <td class="px-4 py-3 text-ms font-semibold border">{{$proveedor->nombre}}</td>
@@ -38,7 +38,15 @@
                                             <td class="px-4 py-3 text-ms font-semibold border">{{$proveedor->correo}}</td>
                                             <td class="px-4 py-3 text-ms font-semibold border">{{$proveedor->empresa}}</td>
                                             <td class="px-4 py-3 text-ms font-semibold border">{{$proveedor->celular}}</td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{$proveedor->estado}}</td>
+                                            @if($proveedor->estado == 'activo')
+                                                <td class="px-4 py-3 text-xs border">
+                                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> {{$proveedor->estado}} </span>
+                                                </td>
+                                            @else
+                                                <td class="px-4 py-3 text-xs border">
+                                                    <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-sm"> {{$proveedor->estado}} </span>
+                                                </td>
+                                            @endif
                                             <td class="px-4 py-3 text-ms font-semibold border" style="text-align: center;">
                                                 <div>
                                                     <a class="p-1 pl-3 pr-3 bg-yellow-400 text-gray-100 text-lg rounded-lg focus:border-4 border-yellow-30"

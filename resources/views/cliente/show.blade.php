@@ -12,21 +12,21 @@
                         <div class="text-sm mt-2">
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                Cedula: {{$cliente->cedula}}
+                                Cedula: {{$cliente->cedula_cliente}}
                             </div>
                             <div class="text-sm mt-2">
                                 <div
                                     class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                    Nombre: {{$cliente->nombre}}
+                                    Nombre: {{$cliente->nombre_cliente}}
                                 </div>
                                 <div
                                     class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                    Apellido: {{$cliente->apellido}}
+                                    Apellido: {{$cliente->apellido_cliente}}
                                 </div>
                                 <div class="text-sm mt-2">
                                     <div
                                         class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                        Celular: {{$cliente->celular}}
+                                        Celular: {{$cliente->celular_cliente}}
                                     </div>
                                 </div>
                             </div>

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Factura
+            Facturas
         </h2>
     </x-slot>
     <div class="py-12">
@@ -12,7 +12,7 @@
                         <div class="text-sm mt-2">
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                @foreach ($usuarios as $usuario)
+                                @foreach ($usuario as $usuario)
                                     @if ($usuario->idusuario == $factura->usuarioid)
                                         Usuario: {{$usuario->nombre}}
                                     @endif
@@ -20,7 +20,7 @@
                             </div>
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                @foreach ($clientes as $cliente)
+                                @foreach ($cliente as $cliente)
                                     @if ($cliente->clientesid == $factura->idcliente)
                                     cliente: {{$cliente->nombre}}
                                     @endif
@@ -28,7 +28,7 @@
                             </div>
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                @foreach ($ventas as $venta)
+                                @foreach ($venta as $venta)
                                     @if ($venta->ventaid == $factura->idventa)
                                     venta: {{$venta->nombre}}
                                     @endif

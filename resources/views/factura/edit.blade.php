@@ -25,29 +25,29 @@
                     </div>
                 @endif
                 <div class="max-w-lg mx-auto">
-                    <form action="{{route('factura.update', $compra)}}" method="POST">
+                    <form action="{{route('factura.update', $factura)}}" method="POST">
                         @csrf @method('PUT')
                         <br>
                         <div class="flex items-center mb-5">
                             <label for="usuarioid" class="inline-block w-20 mr-6 text-right font-bold text-gray-600">Usuario: </label>
                             <select name="usuarioid" class="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400 outline-none">
-                                @foreach ($usuarios as $usuario)
-                                    <option value="{{$usuario->usuarioid}}">{{$usuario->idusuario}}</option>
+                                @foreach ($usuario as $usuario)
+                                    <option value="{{$usuario->idusuario}}">{{$usuario->nombre}}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="flex items-center mb-5">
                             <label for="clientesid" class="inline-block w-20 mr-6 text-right font-bold text-gray-600">Cliente: </label>
                             <select name="clientesid" class="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400 outline-none">
-                                @foreach ($clientes as $cliente)
-                                    <option value="{{$cliente->idclientes}}">{{$cliente->nombre}}</option>
+                                @foreach ($cliente as $cliente)
+                                    <option value="{{$cliente->idcliente}}">{{$cliente->nombre}}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="flex items-center mb-5">
                             <label for="ventaid" class="inline-block w-20 mr-6 text-right font-bold text-gray-600">Venta: </label>
                             <select name="ventaid" class="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400 outline-none">
-                                @foreach ($ventas as $venta)
+                                @foreach ($venta as $venta)
                                     <option value="{{$venta->idventa}}">{{$venta->precio}}</option>
                                 @endforeach
                             </select>

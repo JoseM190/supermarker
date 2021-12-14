@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Producto
+            Productos
         </h2>
     </x-slot>
     <div class="py-12">
@@ -12,7 +12,7 @@
                         <div class="text-sm mt-2">
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                @foreach ($categorias as $categoria)
+                                @foreach ($categoria as $categoria)
                                     @if ($categoria->idcategoria == $producto->categoriaid)
                                         Categoria: {{$categoria->nombre}}
                                     @endif
@@ -20,7 +20,7 @@
                             </div>
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                @foreach ($proveedores as $proveedor)
+                                @foreach ($proveedor as $proveedor)
                                     @if ($proveedor->proveedor == $producto->proveedorid)
                                         Proveedor: {{$proveedor->nombre}}
                                     @endif

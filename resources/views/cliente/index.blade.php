@@ -26,13 +26,13 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white">
-                                    @foreach ($clientes as $cliente)
+                                    @foreach ($cliente as $cliente)
                                         <tr class="text-gray-700">
                                             <td class="px-4 py-3 text-ms font-semibold border">{{$cliente->idcliente}}</td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{$cliente->cedula}}</td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{$cliente->nombre}}</td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{$cliente->apellido}}</td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{$cliente->celular}}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{$cliente->cedula_cliente}}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{$cliente->nombre_cliente}}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{$cliente->apellido_cliente}}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{$cliente->celular_cliente}}</td>
                                             <td class="px-4 py-3 text-ms font-semibold border" style="text-align: center;">
                                                 <div>
                                                     <a class="p-1 pl-3 pr-3 bg-yellow-400 text-gray-100 text-lg rounded-lg focus:border-4 border-yellow-30"
