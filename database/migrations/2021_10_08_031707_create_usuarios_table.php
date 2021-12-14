@@ -14,17 +14,17 @@ class CreateUsuariosTable extends Migration
     public function up()
     {
         Schema::create('usuarios', function (Blueprint $table) {
-            $table->id('id');
-            $table->unsignedBigInteger('idcargo');
+            $table->bigIncrements('idusuario');
+            $table->unsignedBigInteger('cargoid');
             $table->string('nombre');
             $table->string('apellido');
             $table->string('cedula');
             $table->integer('celular');
             $table->string('direccion');
-            $table->string('correo')->nullable();
+            $table->string('correo');
             $table->string('contraseña');
             $table->string('estado');
-            $table->foreign('idcargo')->references('id')->on('cargos');
+            $table->foreign('cargoid')->references('idcargo')->on('cargos');
             $table->timestamps();
         });
     }

@@ -15,4 +15,6 @@ class Cliente extends Model
         'apellido',
         'celular'
     ];
+
+    protected $primaryKey = 'idcliente';
 }

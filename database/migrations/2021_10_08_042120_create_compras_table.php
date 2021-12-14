@@ -14,20 +14,20 @@ class CreateComprasTable extends Migration
     public function up()
     {
         Schema::create('compras', function (Blueprint $table) {
-            $table->id('id');
-            $table->unsignedBigInteger('idusuario');
-            $table->unsignedBigInteger('idproveedor');
-            $table->unsignedBigInteger('idproducto');
+            $table->bigIncrements('idcompra');
+            $table->unsignedBigInteger('usuarioid');
+            $table->unsignedBigInteger('proveedorid');
+            $table->unsignedBigInteger('productoid');
             $table->date('fecha');
             $table->string('descripcion');
             $table->string('unidad');
             $table->integer('cantidad');
-            $table->double('precio');
-            $table->double('subtotal');
-            $table->double('total');
-            $table->foreign('idusuario')->references('id')->on('usuarios');
-            $table->foreign('idproveedor')->references('id')->on('proveedores');
-            $table->foreign('idproducto')->references('id')->on('productos');
+            $table->integer('precio');
+            $table->integer('subtotal');
+            $table->integer('total');
+            $table->foreign('usuarioid')->references('idusuario')->on('usuarios');
+            $table->foreign('proveedorid')->references('idproveedor')->on('proveedores');
+            $table->foreign('productoid')->references('idproducto')->on('productos');
             $table->timestamps();
         });
     }

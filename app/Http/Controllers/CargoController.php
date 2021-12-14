@@ -8,14 +8,12 @@ use Illuminate\Http\Request;
 class CargoController extends Controller
 {
     public function index(){
-        $cargo = Cargo::all();
-        //$cargo = Cargo::orderBy('id', 'desc')->paginate();
-
-        return view('cargo.index', compact('cargo'));
+        $cargos = Cargo::all();
+        return view('cargo.index', compact('cargos'));
     }
 
     public function create(){
-        return view('cargo.create',);
+        return view('cargo.create');
     }
 
     public function store(Request $request){
@@ -27,7 +25,6 @@ class CargoController extends Controller
         $cargo->nombre_cargo = $request->input('nombre_cargo');
         $cargo->save();
 
-        //return view('cargo.index', compact('cargo'));
         return redirect()->route('cargo.show', $cargo);
     }
 
@@ -45,18 +42,14 @@ class CargoController extends Controller
         ]);
 
         $cargo->nombre_cargo = $request->input('nombre_cargo');
-        //$cargo->update();
         $cargo->save();
-        $cargo = Cargo::all();
 
-        return view('cargo.index', compact('cargo'));
-        //return redirect()->route('cargo.show', $cargo);
+        $cargos = Cargo::all();
+        return view('cargo.index', compact('cargos'));
     }
 
     public function destroy(Cargo $cargo){
         $cargo->delete();
-        //$cargo = Cargo::all();
-        //return redirect()->route('cargo.index', compact('cargo'))->with('status', 'Cargo eliminado');
         return redirect()->route('cargo.index')->with('status', 'Cargo eliminado');
     }
 }

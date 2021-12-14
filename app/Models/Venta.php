@@ -8,4 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Venta extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'productoid',
+        'cantidad',
+        'precio',
+        'unidad',
+        'subtotal'
+    ];
+
+    protected $primaryKey = 'idventa';
 }

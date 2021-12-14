@@ -14,13 +14,13 @@ class CreateVentasTable extends Migration
     public function up()
     {
         Schema::create('ventas', function (Blueprint $table) {
-            $table->id('id');
-            $table->unsignedBigInteger('idproducto');
+            $table->bigIncrements('idventa');
+            $table->unsignedBigInteger('productoid');
             $table->integer('cantidad');
             $table->double('precio');
             $table->string('unidad');
-            $table->double('subtotal');
-            $table->foreign('idproducto')->references('id')->on('productos');
+            $table->integer('subtotal');
+            $table->foreign('productoid')->references('idproducto')->on('productos');
             $table->timestamps();
         });
     }

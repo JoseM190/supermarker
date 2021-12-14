@@ -11,4 +11,6 @@ class Cargo extends Model
     protected $fillable = [
         'nombre_cargo'
     ];
+
+    protected $primaryKey = 'idcargo';
 }
