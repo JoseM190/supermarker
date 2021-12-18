@@ -25,7 +25,7 @@
                     </div>
                 @endif
                 <div class="max-w-lg mx-auto">
-                    <form action="{{route('usuario.update', $usuario->idusuario)}}" method="POST">
+                    <form action="{{route('usuario.update', $usuario)}}" method="POST">
                         @csrf @method('PUT')
                         <br>
                         <label for="idcargo" class="text-sm font-medium text-gray-900 block mb-2">Cargo: </label>

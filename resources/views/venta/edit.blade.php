@@ -25,30 +25,30 @@
                     </div>
                 @endif
                 <div class="max-w-lg mx-auto">
-                    <form action="{{route('venta.update', $venta->idventa)}}" method="POST">
+                    <form action="{{route('venta.update', $ventum->idventa)}}" method="POST">
                         @csrf @method('PUT')
                         <br>
-                        <label for="cargoid" class="text-sm font-medium text-gray-900 block mb-2">Cargo: </label>
-                        <select name="cargoid" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                        <label for="productoid" class="text-sm font-medium text-gray-900 block mb-2">Producto: </label>
+                        <select name="productoid" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                             @foreach ($producto as $producto)
                                 <option value="{{$producto->idproducto}}">{{$producto->nombre}}</option>
                             @endforeach
                         </select>
                         <div class="mb-6">
                             <label for="cantidad" class="text-sm font-medium text-gray-900 block mb-2">cantidad: </label>
-                            <input value=" {{old('cantidad', $venta->cantidad)}} " type="text" id="cantidad" name="cantidad" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
+                            <input value=" {{old('cantidad', $ventum->cantidad)}} " type="text" id="cantidad" name="cantidad" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
                         </div>
                         <div class="mb-6">
                             <label for="precio" class="text-sm font-medium text-gray-900 block mb-2">precio: </label>
-                            <input value=" {{old('precio', $venta->precio)}} " type="text" id="precio" name="precio" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
+                            <input value=" {{old('precio', $ventum->precio)}} " type="text" id="precio" name="precio" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
                         </div>
                         <div class="mb-6">
                             <label for="unidad" class="text-sm font-medium text-gray-900 block mb-2">unidad: </label>
-                            <input value=" {{old('unidad', $venta->unidad)}} " type="text" id="unidad" name="unidad" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
+                            <input value=" {{old('unidad', $ventum->unidad)}} " type="text" id="unidad" name="unidad" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
                         </div>
                         <div class="mb-6">
                             <label for="subtotal" class="text-sm font-medium text-gray-900 block mb-2">subtotal: </label>
-                            <input value=" {{old('subtotal', $venta->subtotal)}} " type="text" id="subtotal" name="subtotal" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
+                            <input value=" {{old('subtotal', $ventum->subtotal)}} " type="text" id="subtotal" name="subtotal" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
                         </div>
                         <div style="text-align: center;">
                             <a href="{{ route('venta.index') }}"

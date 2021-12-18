@@ -27,27 +27,27 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white">
-                                    @foreach ($venta as $venta)
+                                    @foreach ($ventum as $ventum)
                                         <tr class="text-gray-700">
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{$venta->idventa}}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{$ventum->idventa}}</td>
                                             <td class="px-4 py-3 text-xs border">
                                                 <span class="px-2 py-1 font-semibold leading-tight text-blue-700 bg-blue-200 rounded-sm">
-                                                    {{$venta->productoid}}
+                                                    {{$ventum->productoid}}
                                                 </span>
                                             </td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{$venta->cantidad}}</td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{$venta->precio}}</td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{$venta->unidad}}</td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{$venta->subtotal}}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{$ventum->cantidad}}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{$ventum->precio}}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{$ventum->unidad}}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{$ventum->subtotal}}</td>
                                             <td class="px-4 py-3 text-ms font-semibold border" style="text-align: center;">
                                                 <div>
                                                     <a class="p-1 pl-3 pr-3 bg-yellow-400 text-gray-100 text-lg rounded-lg focus:border-4 border-yellow-30"
-                                                        href="{{route('venta.show', $venta->idventa)}}">
+                                                        href="{{route('venta.show', $ventum->idventa)}}">
                                                         Editar
                                                     </a>
                                                 </div>
                                                 <br>
-                                                <form action="{{ route('venta.destroy', $venta->idventa) }}" method="POST">
+                                                <form action="{{ route('venta.destroy', $ventum->idventa) }}" method="POST">
                                                     @csrf @method('DELETE')
                                                     <button type="submit" class="p-1 pl-2 pr-2 bg-red-600 text-gray-100 text-lg rounded-lg focus:border-4 border-red-300">
                                                         Eliminar

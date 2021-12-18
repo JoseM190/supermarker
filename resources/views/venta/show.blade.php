@@ -14,26 +14,26 @@
                                 <div
                                     class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
                                     @foreach ($producto as $producto)
-                                        @if ($producto->idproducto == $producto->productoid)
+                                        @if ($producto->idproducto == $ventum->productoid)
                                         producto: {{$producto->nombre}}
                                         @endif
-                                    @endforeach
+                                    @endforeachs
                                 </div>
                                 <div
                                     class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                    cantidad: {{$venta->cantidad}}
+                                    cantidad: {{$ventum->cantidad}}
                                 </div>
                                 <div
                                     class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                    precio: {{$venta->precio}}
+                                    precio: {{$ventum->precio}}
                                 </div>
                                 <div
                                     class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                    unidad: {{$venta->unidad}}
+                                    unidad: {{$ventum->unidad}}
                                 </div>
                                 <div
                                     class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                    subtotal: {{$venta->subtotal}}
+                                    subtotal: {{$ventum->subtotal}}
                                 </div>
                             </div>
                         </div>
@@ -46,7 +46,7 @@
                     Volver
                 </a>
                 &nbsp&nbsp&nbsp
-                <a href="{{ route('venta.edit', $venta) }}"
+                <a href="{{ route('venta.edit', $ventum) }}"
                     class="p-2 pl-5 pr-5 bg-yellow-400 text-gray-100 text-lg rounded-lg focus:border-4 border-yellow-300">
                     Editar
                 </a>

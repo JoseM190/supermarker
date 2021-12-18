@@ -59,7 +59,7 @@ class ProveedorController extends Controller
             'estado' => 'required'
         ]);
 
-        $$proveedor->nombre = $request->input('nombre');
+        $proveedor->nombre = $request->input('nombre');
         $proveedor->apellido = $request->input('apellido');
         $proveedor->ciudad = $request->input('ciudad');
         $proveedor->correo = $request->input('correo');

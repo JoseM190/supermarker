@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SocialController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\TiendaController;
 use App\Http\Controllers\ClienteController;
@@ -12,6 +13,7 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\CompraController;
 use App\Http\Controllers\VentaController;
 use App\Http\Controllers\FacturaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -30,12 +32,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/auth/redirect/{provider}', [SocialController::class, 'redirectToProvider']);
+Route::get('/auth/callback/{provider}', [SocialController::class, 'handleProviderCallback']);
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function(){
     return view('dashboard');
 })->name('dashboard');
 
 //Route::resource('tiendas', TiendaController::class);
 //Route::get('tiendas/{producto}', [TiendaController::class, 'crearPedido'])->name('tiendas.crearPedido');
+
+
+
 
 Route::resource('cliente', ClienteController::class);
 Route::resource('cargo', CargoController::class);

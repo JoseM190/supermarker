@@ -14,7 +14,7 @@
                                 <div
                                     class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
                                     @foreach ($cargo as $cargo)
-                                        @if ($cargo->idcargo == $cargo->idcargo)
+                                        @if ($cargo->idcargo == $usuario->cargoid)
                                             Cargo: {{$cargo->nombre_cargo}}
                                         @endif
                                     @endforeach
@@ -62,7 +62,7 @@
                     Volver
                 </a>
                 &nbsp&nbsp&nbsp
-                <a href="{{ route('usuario.edit', $usuario) }}"
+                <a href="{{ route('usuario.edit', $usuario->idusuario) }}"
                     class="p-2 pl-5 pr-5 bg-yellow-400 text-gray-100 text-lg rounded-lg focus:border-4 border-yellow-300">
                     Editar
                 </a>

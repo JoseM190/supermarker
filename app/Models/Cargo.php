@@ -13,4 +13,9 @@ class Cargo extends Model
     ];
 
     protected $primaryKey = 'idcargo';
+
+    //uno a uno inversa
+    public function usuario(){
+        return $this->belongsTo('App\Models\Usuario', 'usuario', 'idcargo', 'idusuario');
+    }
 }

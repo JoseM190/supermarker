@@ -70,7 +70,7 @@ class CompraController extends Controller
         $usuario = Usuario::all();
         $proveedor = Proveedore::all();
         $producto = Producto::all();
-        return view('compra.edit', compact(['compra', 'usuarios', 'proveedor', 'productos']));
+        return view('compra.edit', compact(['compra', 'usuario', 'proveedor', 'producto']));
     }
 
     public function update(Request $request, Compra $compra){

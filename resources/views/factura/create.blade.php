@@ -31,13 +31,13 @@
                         <label for="usuarioid" class="text-sm font-medium text-gray-900 block mb-2">Usuario: </label>
                         <select name="usuarioid" class=" bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" >
                             @foreach ($usuario as $usuario)
-                                <option value="{{$usuario->idusuario}}">{{$usuario->nombre}}</option>
+                                <option value="{{$usuario->idusuario}}">{{$usuario->nombre_usuario}}</option>
                             @endforeach
                         </select><br>
                         <label for="clientesid" class="text-sm font-medium text-gray-900 block mb-2">Cliente: </label>
                         <select name="clientesid" class=" bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" >
                             @foreach ($cliente as $cliente)
-                                <option value="{{$cliente->idcliente}}">{{$cliente->nombre}}</option>
+                                <option value="{{$cliente->idcliente}}">{{$cliente->nombre_cliente}}</option>
                             @endforeach
                         </select><br>
                         <label for="ventaid" class="text-sm font-medium text-gray-900 block mb-2">Venta: </label>

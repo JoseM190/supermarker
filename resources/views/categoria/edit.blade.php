@@ -25,16 +25,16 @@
                     </div>
                 @endif
                 <div class="max-w-lg mx-auto">
-                    <form action="{{route('categoria.update', $categoria)}}" method="POST">
+                    <form action="{{route('categoria.update', $categorium)}}" method="POST">
                         @csrf @method('PUT')
                         <br>
                         <div class="mb-6">
                             <label for="nombre" class="text-sm font-medium text-gray-900 block mb-2">Nombre de la Categoria: </label>
-                            <input value=" {{old('nombre', $categoria->nombre)}} " type="text" id="nombre" name="nombre" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
+                            <input value=" {{old('nombre', $categorium->nombre)}} " type="text" id="nombre" name="nombre" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
                         </div>
                         <div class="mb-6">
                             <label for="pasillo" class="text-sm font-medium text-gray-900 block mb-2">Pasillo: </label>
-                            <input value=" {{old('pasillo', $categoria->pasillo)}} " type="text" id="pasillo" name="pasillo" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
+                            <input value=" {{old('pasillo', $categorium->pasillo)}} " type="text" id="pasillo" name="pasillo" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" required="">
                         </div>
                         <label for="estado" class="text-sm font-medium text-gray-900 block mb-2">
                             Estado:

@@ -32,11 +32,15 @@
                                     @foreach ($producto as $producto)
                                     <tr class="text-gray-700">
                                         <td class="px-4 py-3 text-ms font-semibold border">{{$producto->idproducto}}</td>
-                                        <td class="px-2 py-1 font-semibold leading-tight text-blue-700 bg-blue-200 rounded-sm">
-                                            {{$producto->categoriaid}}
+                                        <td class="px-4 py-3 text-ms font-semibold border">
+                                            <span class="px-2 py-1 font-semibold leading-tight text-blue-700 bg-blue-100 rounded-sm">
+                                                {{$producto->categoriaid}}
+                                            </span>
                                         </td>
-                                        <td class="px-2 py-1 font-semibold leading-tight text-blue-700 bg-blue-200 rounded-sm">
-                                            {{$producto->proveedorid}}
+                                        <td class="px-4 py-3 text-ms font-semibold border">
+                                            <span class="px-2 py-1 font-semibold leading-tight text-blue-700 bg-blue-100 rounded-sm">
+                                                {{$producto->proveedorid}}
+                                            </span>
                                         </td>
                                         <td class="px-4 py-3 text-ms font-semibold border">{{$producto->nombre}}</td>
                                         <td class="px-4 py-3 text-ms font-semibold border">{{$producto->cantidad}}</td>

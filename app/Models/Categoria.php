@@ -15,4 +15,9 @@ class Categoria extends Model
     ];
 
     protected $primaryKey = 'idcategoria';
+
+    //uno a muchos
+    public function categoria(){
+        return $this->hasMAny('App\Models\Categoria');
+    }
 }

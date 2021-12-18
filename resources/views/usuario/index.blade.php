@@ -34,8 +34,8 @@
                                     @foreach ($usuario as $usuario)
                                         <tr class="text-gray-700">
                                             <td class="px-4 py-3 text-ms font-semibold border">{{$usuario->idusuario}}</td>
-                                            <td class="px-4 py-3 text-xs border">
-                                                <span class="px-2 py-1 font-semibold leading-tight text-blue-700 bg-blue-200 rounded-sm">
+                                            <td class="px-4 py-3 text-ms font-semibold border">
+                                                <span class="px-2 py-1 font-semibold leading-tight text-blue-700 bg-blue-100 rounded-sm">
                                                     {{$usuario->idcargo}}
                                                 </span>
                                             </td>

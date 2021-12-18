@@ -18,5 +18,16 @@ class Proveedore extends Model
         'estado'
     ];
 
-    protected $primaryKey = 'idprveedor';
+    protected $primaryKey = 'idproveedor';
+
+    //uno a muchos
+    public function compra(){
+        return $this->hasMAny('App\Models\Compra');
+    }
+
+    //mucho a muchos
+    public function producto(){
+        return $this->belongsToMany('App\Models\Producto');
+    }
+
 }

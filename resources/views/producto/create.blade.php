@@ -30,13 +30,13 @@
                         <br>
                         <label for="categoriaid" class="text-sm font-medium text-gray-900 block mb-2">Categoria: </label>
                         <select name="categoriaid" class=" bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" >
-                            @foreach ($categorias as $categoria)
-                                <option value="{{$categoria->idcategoria}}">{{$categoria->nombre}}</option>
+                            @foreach ($categorium as $categorium)
+                                <option value="{{$categorium->idcategoria}}">{{$categorium->nombre}}</option>
                             @endforeach
                         </select><br>
                         <label for="proveedorid" class="text-sm font-medium text-gray-900 block mb-2">Proveedor: </label>
                         <select name="proveedorid" class=" bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" >
-                            @foreach ($proveedores as $proveedor)
+                            @foreach ($proveedor as $proveedor)
                                 <option value="{{$proveedor->idproveedor}}">{{$proveedor->nombre}}</option>
                             @endforeach
                         </select><br>
@@ -136,7 +136,7 @@
                             </div>
                         @enderror
                         <div style="text-align: center;">
-                            <a href="{{ route('factura.index') }}"
+                            <a href="{{ route('producto.index') }}"
                                 class="p-2 pl-5 pr-5 bg-blue-500 text-gray-100 text-lg rounded-lg focus:border-4 border-blue-300">
                                 Volver
                             </a>

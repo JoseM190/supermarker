@@ -25,29 +25,29 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white">
-                                    @foreach ($categoria as $categoria)
+                                    @foreach ($categorium as $categorium)
                                         <tr class="text-gray-700">
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{$categoria->idcategoria}}</td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{$categoria->nombre}}</td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{$categoria->pasillo}}</td>
-                                            @if($categoria->estado == 'activo')
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{$categorium->idcategoria}}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{$categorium->nombre}}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{$categorium->pasillo}}</td>
+                                            @if($categorium->estado == 'activo')
                                                 <td class="px-4 py-3 text-xs border">
-                                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> {{$categoria->estado}} </span>
+                                                    <span class="px-2 py-1 font-semibold leading-tight text-green-700 bg-green-100 rounded-sm"> {{$categorium->estado}} </span>
                                                 </td>
                                             @else
                                                 <td class="px-4 py-3 text-xs border">
-                                                    <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-sm"> {{$categoria->estado}} </span>
+                                                    <span class="px-2 py-1 font-semibold leading-tight text-red-700 bg-red-100 rounded-sm"> {{$categorium->estado}} </span>
                                                 </td>
                                             @endif
                                             <td class="px-4 py-3 text-ms font-semibold border" style="text-align: center;">
                                                 <div>
                                                     <a class="p-1 pl-3 pr-3 bg-yellow-400 text-gray-100 text-lg rounded-lg focus:border-4 border-yellow-30"
-                                                        href="{{route('categoria.show', $categoria->idcategoria)}}">
+                                                        href="{{route('categoria.show', $categorium->idcategoria)}}">
                                                         Editar
                                                     </a>
                                                 </div>
                                                 <br>
-                                                <form action="{{ route('categoria.destroy', $categoria->idcategoria) }}" method="POST">
+                                                <form action="{{ route('categoria.destroy', $categorium->idcategoria) }}" method="POST">
                                                     @csrf @method('DELETE')
                                                     <button type="submit" class="p-1 pl-2 pr-2 bg-red-600 text-gray-100 text-lg rounded-lg focus:border-4 border-red-300">
                                                         Eliminar

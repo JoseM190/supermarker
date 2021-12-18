@@ -37,8 +37,8 @@ class FacturaController extends Controller
 
         $factura = new Factura;
         $factura->usuarioid = $request['usuarioid'];
-        $factura->clientesid = $request['proveedorid'];
-        $factura->ventaid = $request['productoid'];
+        $factura->clientesid = $request['clientesid'];
+        $factura->ventaid = $request['ventaid'];
         $factura->fecha = $request->input('fecha');
         $factura->descripcion = $request->input('descripcion');
         $factura->total = $request->input('total');
@@ -76,8 +76,8 @@ class FacturaController extends Controller
         ]);
 
         $factura->usuarioid = $request['usuarioid'];
-        $factura->clientesid = $request['proveedorid'];
-        $factura->ventaid = $request['productoid'];
+        $factura->clientesid = $request['clientesid'];
+        $factura->ventaid = $request['ventaid'];
         $factura->fecha = $request->input('fecha');
         $factura->descripcion = $request->input('descripcion');
         $factura->total = $request->input('total');

@@ -12,16 +12,16 @@
                         <div class="text-sm mt-2">
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                @foreach ($categoria as $categoria)
-                                    @if ($categoria->idcategoria == $producto->categoriaid)
-                                        Categoria: {{$categoria->nombre}}
+                                @foreach ($categorium as $categorium)
+                                    @if ($categorium->idcategoria == $producto->categoriaid)
+                                        Categoria: {{$categorium->nombre}}
                                     @endif
                                 @endforeach
                             </div>
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
                                 @foreach ($proveedor as $proveedor)
-                                    @if ($proveedor->proveedor == $producto->proveedorid)
+                                    @if ($proveedor->idproveedor == $producto->proveedorid)
                                         Proveedor: {{$proveedor->nombre}}
                                     @endif
                                 @endforeach

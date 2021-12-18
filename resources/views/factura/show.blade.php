@@ -21,7 +21,7 @@
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
                                 @foreach ($cliente as $cliente)
-                                    @if ($cliente->clientesid == $factura->idcliente)
+                                    @if ($cliente->clientesid == $cliente->idcliente)
                                     cliente: {{$cliente->nombre}}
                                     @endif
                                 @endforeach

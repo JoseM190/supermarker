@@ -28,27 +28,27 @@
                     <form action="{{route('compra.update', $compra)}}" method="POST">
                         @csrf @method('PUT')
                         <br>
-                        <div class="flex items-center mb-5">
-                            <label for="usuarioid" class="inline-block w-20 mr-6 text-right font-bold text-gray-600">Usuario: </label>
-                            <select name="usuarioid" class="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400 outline-none">
+                        <div class="mb-6"">
+                            <label for="usuarioid" class="text-sm font-medium text-gray-900 block mb-2">Usuario: </label>
+                            <select name="usuarioid" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                 @foreach ($usuario as $usuario)
-                                    <option value="{{$usuario->usuarioid}}">{{$usuario->idusuario}}</option>
+                                    <option value="{{$usuario->idusuario}}">{{$usuario->nombre_usuario}}</option>
                                 @endforeach
                             </select>
                         </div>
-                        <div class="flex items-center mb-5">
-                            <label for="proveedorid" class="inline-block w-20 mr-6 text-right font-bold text-gray-600">Proveedor: </label>
-                            <select name="proveedorid" class="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400 outline-none">
+                        <div class="mb-6"">
+                            <label for="proveedorid" class="text-sm font-medium text-gray-900 block mb-2">Proveedor: </label>
+                            <select name="proveedorid" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                 @foreach ($proveedor as $proveedor)
-                                    <option value="{{$proveedor->proveedorid}}">{{$proveedor->idproveedor}}</option>
+                                    <option value="{{$proveedor->idproveedor}}">{{$proveedor->nombre}}</option>
                                 @endforeach
                             </select>
                         </div>
-                        <div class="flex items-center mb-5">
-                            <label for="productoid" class="inline-block w-20 mr-6 text-right font-bold text-gray-600">Producto: </label>
-                            <select name="productoid" class="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400 outline-none">
+                        <div class="mb-6"">
+                            <label for="productoid" class="text-sm font-medium text-gray-900 block mb-2">Producto: </label>
+                            <select name="productoid" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                 @foreach ($producto as $producto)
-                                    <option value="{{$producto->productoid}}">{{$producto->idproducto}}</option>
+                                    <option value="{{$producto->idproducto}}">{{$producto->nombre}}</option>
                                 @endforeach
                             </select>
                         </div>

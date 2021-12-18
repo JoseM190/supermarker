@@ -28,19 +28,19 @@
                     <form action="{{route('producto.update', $producto)}}" method="POST">
                         @csrf @method('PUT')
                         <br>
-                        <div class="flex items-center mb-5">
-                            <label for="categoriaid" class="inline-block w-20 mr-6 text-right font-bold text-gray-600">Categoria: </label>
-                            <select name="categoriaid" class="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400 outline-none">
-                                @foreach ($categoria as $categoria)
-                                    <option value="{{$categoria->categoriaid}}">{{$categoriaid->nombre}}</option>
+                        <div class="mb-6">
+                            <label for="categoriaid" class="text-sm font-medium text-gray-900 block mb-2">Categoria: </label>
+                            <select name="categoriaid" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
+                                @foreach ($categorium as $categorium)
+                                    <option value="{{$categorium->idcategoria}}">{{$categorium->nombre}}</option>
                                 @endforeach
                             </select>
                         </div>
-                        <div class="flex items-center mb-5">
-                            <label for="proveedorid" class="inline-block w-20 mr-6 text-right font-bold text-gray-600">Proveedor: </label>
-                            <select name="proveedorid" class="flex-1 py-2 border-b-2 border-gray-400 focus:border-green-400 text-gray-600 placeholder-gray-400 outline-none">
+                        <div class="mb-6">
+                            <label for="proveedorid" class="text-sm font-medium text-gray-900 block mb-2">Proveedor: </label>
+                            <select name="proveedorid" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5">
                                 @foreach ($proveedor as $proveedor)
-                                    <option value="{{$proveedor->proveedorid}}">{{$proveedor->nombre}}</option>
+                                    <option value="{{$proveedor->idproveedor}}">{{$proveedor->nombre}}</option>
                                 @endforeach
                             </select>
                         </div>

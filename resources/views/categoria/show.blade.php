@@ -12,15 +12,15 @@
                         <div class="text-sm mt-2">
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                Nombre de la Categoria: {{$categoria->nombre}}
+                                Nombre de la Categoria: {{$categorium->nombre}}
                             </div>
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                Pasillo: {{$categoria->pasillo}}
+                                Pasillo: {{$categorium->pasillo}}
                             </div>
                             <div
                                 class="bg-white p-2 rounded mt-1 border-b border-grey cursor-pointer hover:bg-grey-lighter">
-                                Estado: {{$categoria->estado}}
+                                Estado: {{$categorium->estado}}
                             </div>
                         </div>
                     </div>
@@ -32,7 +32,7 @@
                     Volver
                 </a>
                 &nbsp&nbsp&nbsp
-                <a href="{{ route('categoria.edit', $categoria) }}"
+                <a href="{{ route('categoria.edit', $categorium) }}"
                     class="p-2 pl-5 pr-5 bg-yellow-400 text-gray-100 text-lg rounded-lg focus:border-4 border-yellow-300">
                     Editar
                 </a>

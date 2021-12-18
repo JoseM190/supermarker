@@ -17,4 +17,9 @@ class Cliente extends Model
     ];
 
     protected $primaryKey = 'idcliente';
+
+    //uno a muchos
+    public function factura(){
+        return $this->hasMAny('App\Models\Factura');
+    }
 }

@@ -10,7 +10,7 @@ class Factura extends Model
     use HasFactory;
     protected $fillable = [
         'usuarioid',
-        'clienteid',
+        'clientesid',
         'ventaid',
         'fecha',
         'descripcion',
@@ -18,4 +18,18 @@ class Factura extends Model
     ];
 
     protected $primaryKey = 'idfactura';
+
+    //uno a muchos
+    public function venta(){
+        return $this->hasMAny('App\Models\Venta');
+    }
+
+    //uno a muchos inversa
+    public function cliente(){
+        return $this->belongsTo('App\Models\Cliente');
+    }
+
+    public function usuario(){
+        return $this->belongsTo('App\Models\Usuario');
+    }
 }

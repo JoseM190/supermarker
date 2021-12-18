@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 class CategoriaController extends Controller
 {
     public function index(){
-        $categoria = Categoria::all();
-        return view('categoria.index', compact('categoria'));
+        $categorium = Categoria::all();
+        return view('categoria.index', compact('categorium'));
     }
 
     public function create(){
@@ -23,41 +23,41 @@ class CategoriaController extends Controller
             'estado' => 'required'
         ]);
 
-        $categoria = new Categoria;
-        $categoria->nombre = $request->input('nombre');
-        $categoria->pasillo = $request->input('pasillo');
-        $categoria->estado = $request->input('estado');
-        $categoria->save();
+        $categorium = new Categoria;
+        $categorium->nombre = $request->input('nombre');
+        $categorium->pasillo = $request->input('pasillo');
+        $categorium->estado = $request->input('estado');
+        $categorium->save();
 
-        return redirect()->route('categoria.show', $categoria);
+        return redirect()->route('categoria.show', $categorium);
     }
 
-    public function show(Categoria $categoria){
-        return view('categoria.show', compact('categoria'));
+    public function show(Categoria $categorium){
+        return view('categoria.show', compact('categorium'));
     }
 
-    public function edit(Categoria $categoria){
-        return view('categoria.edit', compact('categoria'));
+    public function edit(Categoria $categorium){
+        return view('categoria.edit', compact('categorium'));
     }
 
-    public function update(Request $request, Categoria $categoria){
+    public function update(Request $request, Categoria $categorium){
         $request->validate([
             'nombre' => 'required',
             'pasillo' => 'required',
             'estado' => 'required'
         ]);
 
-        $categoria->nombre = $request->input('nombre');
-        $categoria->pasillo = $request->input('pasillo');
-        $categoria->estado = $request->input('estado');
-        $categoria->save();
+        $categorium->nombre = $request->input('nombre');
+        $categorium->pasillo = $request->input('pasillo');
+        $categorium->estado = $request->input('estado');
+        $categorium->save();
 
-        $categoria = Categoria::all();
-        return view('categoria.index', compact('categoria'));
+        $categorium = Categoria::all();
+        return view('categoria.index', compact('categorium'));
     }
 
-    public function destroy(Categoria $categoria){
-        $categoria->delete();
+    public function destroy(Categoria $categorium){
+        $categorium->delete();
         return redirect()->route('categoria.index');
     }
 }

@@ -11,15 +11,15 @@ class ProductoController extends Controller
 {
     public function index(){
         $producto = Producto::all();
-        $categoria = Categoria::all();
+        $categorium = Categoria::all();
         $proveedor = Proveedore::all();
-        return view('producto.index', compact(['producto', 'categoria', 'proveedor']));
+        return view('producto.index', compact(['producto', 'categorium', 'proveedor']));
     }
 
     public function create(){
-        $categoria = Categoria::all();
+        $categorium = Categoria::all();
         $proveedor = Proveedore::all();
-        return view('producto.create', compact(['categoria', 'proveedor']));
+        return view('producto.create', compact(['categorium', 'proveedor']));
     }
 
     public function store(Request $request){
@@ -44,21 +44,21 @@ class ProductoController extends Controller
         $producto->save();
 
         $producto = Producto::all();
-        $categoria = Categoria::all();
+        $categorium = Categoria::all();
         $proveedor = Proveedore::all();
-        return view('producto.index', compact(['producto', 'categoria', 'proveedor']));
+        return view('producto.index', compact(['producto', 'categorium', 'proveedor']));
     }
 
     public function show(Producto $producto){
-        $categoria = Categoria::all();
+        $categorium = Categoria::all();
         $proveedor = Proveedore::all();
-        return view('producto.show', compact(['producto', 'categoria', 'proveedor']));
+        return view('producto.show', compact(['producto', 'categorium', 'proveedor']));
     }
 
     public function edit(Producto $producto){
-        $categoria = Categoria::all();
+        $categorium = Categoria::all();
         $proveedor = Proveedore::all();
-        return view('producto.edit', compact(['producto', 'categoria', 'proveedor']));
+        return view('producto.edit', compact(['producto', 'categorium', 'proveedor']));
     }
 
     public function update(Request $request, Producto $producto){
@@ -81,9 +81,9 @@ class ProductoController extends Controller
         $producto->stock = $request->input('stock');
         $producto->save();
 
-        $categoria = Categoria::all();
+        $categorium = Categoria::all();
         $proveedor = Proveedore::all();
-        return view('producto.index', compact(['producto', 'categoria', 'proveedor']));
+        return view('producto.index', compact(['producto', 'categorium', 'proveedor']));
     }
 
     public function destroy(Producto $producto){

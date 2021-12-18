@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 class VentaController extends Controller
 {
     public function index(){
-        $venta = Venta::all();
+        $ventum = Venta::all();
         $producto = Producto::all();
-        return view('venta.index', compact(['venta', 'producto']));
+        return view('venta.index', compact(['ventum', 'producto']));
     }
 
     public function create(){
@@ -28,30 +28,30 @@ class VentaController extends Controller
             'subtotal' => 'required'
         ]);
 
-        $venta = new Venta;
-        $venta->productoid = $request['productoid'];
-        $venta->cantidad = $request->input('cantidad');
-        $venta->precio = $request->input('precio');
-        $venta->unidad = $request->input('unidad');
-        $venta->subtotal = $request->input('subtotal');
-        $venta->save();
+        $ventum = new Venta;
+        $ventum->productoid = $request['productoid'];
+        $ventum->cantidad = $request->input('cantidad');
+        $ventum->precio = $request->input('precio');
+        $ventum->unidad = $request->input('unidad');
+        $ventum->subtotal = $request->input('subtotal');
+        $ventum->save();
 
-        $venta = Venta::all();
+        $ventum = Venta::all();
         $producto = Producto::all();
-        return view('venta.index', compact(['venta', 'producto']));
+        return view('venta.index', compact(['ventum', 'producto']));
     }
 
-    public function show(Venta $venta){
+    public function show(Venta $ventum){
         $producto = Producto::all();
-        return view('venta.show', compact(['venta', 'producto']));
+        return view('venta.show', compact(['ventum', 'producto']));
     }
 
-    public function edit(Venta $venta){
+    public function edit(Venta $ventum){
         $producto = Producto::all();
-        return view('venta.edit', compact(['venta', 'producto']));
+        return view('venta.edit', compact(['ventum', 'producto']));
     }
 
-    public function update(Request $request, Venta $venta){
+    public function update(Request $request, Venta $ventum){
         $request->validate([
             'productoid' => 'required',
             'cantidad' => 'required',
@@ -60,19 +60,19 @@ class VentaController extends Controller
             'subtotal' => 'required'
         ]);
 
-        $venta->productoid = $request['productoid'];
-        $venta->cantidad = $request->input('cantidad');
-        $venta->precio = $request->input('precio');
-        $venta->unidad = $request->input('unidad');
-        $venta->subtotal = $request->input('subtotal');
-        $venta->save();
+        $ventum->productoid = $request['productoid'];
+        $ventum->cantidad = $request->input('cantidad');
+        $ventum->precio = $request->input('precio');
+        $ventum->unidad = $request->input('unidad');
+        $ventum->subtotal = $request->input('subtotal');
+        $ventum->save();
 
         $producto = Producto::all();
-        return view('venta.index', compact(['venta', 'producto']));
+        return view('venta.index', compact(['ventum', 'producto']));
     }
 
-    public function destroy(Venta $venta){
-        $venta->delete();
+    public function destroy(Venta $ventum){
+        $ventum->delete();
         return redirect()->route('venta.index');
     }
 }

@@ -11,7 +11,7 @@ class Usuario extends Model
 
     protected $fillable = [
         'idcargo',
-        'nombre_usuario_usuario',
+        'nombre_usuario',
         'apellido_usuario',
         'cedula_usuario',
         'celular_usuario',
@@ -22,4 +22,14 @@ class Usuario extends Model
     ];
 
     protected $primaryKey = 'idusuario';
+
+    //uno a muchos
+    public function factura(){
+        return $this->hasMAny('App\Models\Factura');
+    }
+
+    //uno a uno
+    public function cargo(){
+        return $this->hasOne('App\Models\Cargo');
+    }
 }

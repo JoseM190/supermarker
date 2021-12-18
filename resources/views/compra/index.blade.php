@@ -7,7 +7,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <a href="{{ route('cliente.create') }}"
+                <a href="{{ route('compra.create') }}"
                     class="p-2 pl-5 pr-5 bg-indigo-500 text-gray-100 text-lg rounded-lg focus:border-4 border-indigo-300">
                     Registrar Compra
                 </a>
@@ -35,19 +35,26 @@
                                     @foreach ($compra as $compra)
                                         <tr class="text-gray-700">
                                             <td class="px-4 py-3 text-ms font-semibold border">{{$compra->idcompra}}</td>
-                                            <td class="px-2 py-1 font-semibold leading-tight text-blue-700 bg-blue-200 rounded-sm">
-                                                {{$compra->usuarioid}}
+                                            <td class="px-4 py-3 text-ms font-semibold border">
+                                                <span class="px-2 py-1 font-semibold leading-tight text-blue-700 bg-blue-100 rounded-sm">
+                                                    {{$compra->usuarioid}}
+                                                </span>
                                             </td>
-                                            <td class="px-2 py-1 font-semibold leading-tight text-blue-700 bg-blue-200 rounded-sm">
-                                                {{$compra->proveedorid}}
+                                            <td class="px-4 py-3 text-ms font-semibold border">
+                                                <span class="px-2 py-1 font-semibold leading-tight text-blue-700 bg-blue-100 rounded-sm">
+                                                    {{$compra->proveedorid}}
+                                                </span>
                                             </td>
-                                            <td class="px-2 py-1 font-semibold leading-tight text-blue-700 bg-blue-200 rounded-sm">
-                                                {{$compra->productoid}}
+                                            <td class="px-4 py-3 text-ms font-semibold border">
+                                                <span class="px-2 py-1 font-semibold leading-tight text-blue-700 bg-blue-100 rounded-sm">
+                                                    {{$compra->productoid}}
+                                                </span>
                                             </td>
-                                            <td class="px-4 py-3 text-ms font-semibold border">{{$compra->fecha}}</td>
                                             <td class="px-4 py-3 text-ms font-semibold border">{{$compra->descripcion}}</td>
                                             <td class="px-4 py-3 text-ms font-semibold border">{{$compra->unidad}}</td>
                                             <td class="px-4 py-3 text-ms font-semibold border">{{$compra->cantidad}}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{$compra->precio}}</td>
+                                            <td class="px-4 py-3 text-ms font-semibold border">{{$compra->fecha}}</td>
                                             <td class="px-4 py-3 text-ms font-semibold border">{{$compra->subtotal}}</td>
                                             <td class="px-4 py-3 text-ms font-semibold border">{{$compra->total}}</td>
                                             <td class="px-4 py-3 text-ms font-semibold border" style="text-align: center;">
